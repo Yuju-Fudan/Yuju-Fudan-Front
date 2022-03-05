@@ -78,3 +78,14 @@ backdrop-filter: blur( 1px );
 padding: 0px;
 margin: 0px;
 }
+.consoles{
+    background-color: azure;
+    border: none;
+}
+.console-block{
+    padding: 10px;
+    background-color: white;
+}
+#blocklyDiv{
+    border:none;
+}
