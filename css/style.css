@@ -81,11 +81,42 @@ margin: 0px;
 .consoles{
     background-color: azure;
     border: none;
+    
 }
 .console-block{
     padding: 10px;
     background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.bi{
+    padding: 0px;
+    margin: 0px;
+}
+i{
+    margin: 0px;
+    padding: 0px;
 }
 #blocklyDiv{
     border:none;
+}
+.blockys{
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.bi-line{
+font-size: 32px;
+margin: 0px;
+background: rgba(156, 182, 177, 0.8);
+box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+backdrop-filter: blur( 1px );
+padding: 0px;
+-webkit-backdrop-filter: blur( 1px );
+border-radius: 60px;
+padding: 4px 10px;
+margin: 10px;
+margin-top: 10px;
+}
+.play_area{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
