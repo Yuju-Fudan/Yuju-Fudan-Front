@@ -1,4 +1,4 @@
-.card{
+.card {
     text-align: center;
     margin: 0 auto;
 
@@ -7,116 +7,160 @@
     border-radius: 29px;
     background: rgba(204, 245, 237, 0.8);
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-backdrop-filter: blur( 1px );
--webkit-backdrop-filter: blur( 1px );
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
 
 }
-body{
+
+body {
     background-image: url(../img/back.png);
-    font-family: 'Noto Sans JP', sans-serif;  
-    color: rgb(58, 104, 89);color: rgb(58, 104, 89);
+    font-family: 'Noto Sans JP', sans-serif;
+    color: rgb(58, 104, 89);
+    color: rgb(58, 104, 89);
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-weight: 500;
-    }
-.margin-top{
+    user-select: none;
+}
+
+.margin-top {
     margin-top: 200px;
 }
-.center{
-text-align: center;
-margin: 0 auto;
-padding: 0 auto;
+
+.center {
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 auto;
 }
-.right{
+
+.right {
     z-index: 1;
     position: fixed;
     bottom: 0px;
     right: 0px;
     max-height: 80vh;
+    max-width: 120vw;
 }
-.left{
+
+.left {
     z-index: 1;
     position: fixed;
     bottom: 0px;
     left: 0px;
     max-height: 80vh;
+    max-width: 120vw;
 }
-.container{
+
+.container {
     position: relative;
     z-index: 8;
 }
-h1{
+
+h1 {
     color: rgb(58, 104, 89);
 }
-.btn-2084{
+
+.btn-2084 {
     background-color: azure;
-padding: 10px 50px;
-border-radius: 20px;
-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-color: rgb(58, 104, 89);
-font-weight: 400;
+    padding: 10px 50px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    color: rgb(58, 104, 89);
+    font-weight: 400;
+    margin-top: 10px;
 }
-:hover.btn-2084{
+
+:hover.btn-2084 {
     background-color: rgb(203, 228, 228);
 }
 
-.form-control{
+.form-control {
     border-radius: 20px;
     background-color: azure;
 }
+
 img.emoji {
     height: 1em;
     width: 1em;
 
-  }
-.shares{
+}
+
+.shares {
     border: none;
     border-radius: 100px;
     background: rgba(204, 245, 237, 0.8);
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-backdrop-filter: blur( 1px );
--webkit-backdrop-filter: blur( 1px );
-padding: 0px;
-margin: 0px;
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    padding: 0px;
+    margin: 0px;
 }
-.consoles{
+
+.consoles {
     background-color: azure;
     border: none;
-    
+
 }
-.console-block{
+
+.console-block {
     padding: 10px;
     background-color: white;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
-.bi{
+
+.bi {
     padding: 0px;
     margin: 0px;
 }
-i{
+
+i {
     margin: 0px;
     padding: 0px;
 }
-#blocklyDiv{
-    border:none;
+
+#blocklyDiv {
+    border: none;
 }
-.blockys{
+
+.blockys {
     background-color: white;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
-.bi-line{
-font-size: 32px;
-margin: 0px;
-background: rgba(156, 182, 177, 0.8);
-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-backdrop-filter: blur( 1px );
-padding: 0px;
--webkit-backdrop-filter: blur( 1px );
-border-radius: 60px;
-padding: 4px 10px;
-margin: 10px;
-margin-top: 10px;
+
+.bi-line {
+    font-size: 32px;
+    margin: 0px;
+    background: rgba(156, 182, 177, 0.8);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    backdrop-filter: blur(1px);
+    padding: 0px;
+    -webkit-backdrop-filter: blur(1px);
+    border-radius: 60px;
+    padding: 4px 10px;
+    margin: 10px;
+    margin-top: 10px;
 }
-.play_area{
+
+.play_area {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.navbar{
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    backdrop-filter: blur(1px);
+    background: rgba(255, 255, 255, 0.8);
+    -webkit-backdrop-filter: blur(1px);
+}
+.light{
+    z-index: 30;
+    position: fixed;
+    bottom: 10px;
+    left: 47%;
+    text-align: center;
+    padding: 0 auto;
+    margin: 0 auto;
+}
+a{
+    color: rgb(58, 104, 89);
 }
