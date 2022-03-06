@@ -1,6 +1,7 @@
 .card {
     text-align: center;
     margin: 0 auto;
+    z-index: 2;
 
     padding: 20px;
     border: none;
@@ -144,6 +145,7 @@ i {
 .play_area {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
+<<<<<<< Updated upstream
 .navbar{
     margin: 20px;
     border-radius: 20px;
@@ -163,4 +165,9 @@ i {
 }
 a{
     color: rgb(58, 104, 89);
+=======
+.ranking-card{
+    height: 400px;
+    
+>>>>>>> Stashed changes
 }
