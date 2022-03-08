@@ -103,7 +103,7 @@ img.emoji {
 }
 
 .console-block {
-    padding: 10px;
+    
     background-color: white;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
@@ -170,4 +170,38 @@ a{
     height: 400px;
     
 
+}
+.box{
+    width: 64px;
+    height: 64px;
+    background-color: rgb(196, 255, 203);
+    padding: 0px;
+    padding-top: 16px;
+
+    border:3px solid rgba(131, 131, 131, 0.501);
+    border-radius: 8px;
+    margin: 0px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    font-size: 20px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 800;
+
+}
+.margins{
+    margin:0 auto;
+    padding:0 auto;
+}
+.nums2{
+    background-color: rgb(196, 255, 203);
+}
+.nums4{
+    background-color: rgb(250, 196, 255);
+}
+.numsN{
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+.nums128{
+    background-color: rgb(255, 200, 196);
 }
