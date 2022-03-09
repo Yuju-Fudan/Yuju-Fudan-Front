@@ -21,8 +21,10 @@
     <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/blockly@1.0.0/blockly_compressed.min.js"></script> <!-- ライブラリを読み込む -->
     <script src="https://cdn.jsdelivr.net/npm/blockly@1.0.0/blocks_compressed.min.js"></script> <!-- ライブラリを読み込む -->
-    <script src="https://cdn.jsdelivr.net/npm/blockly@1.0.0/javascript_compressed.min.js"></script> <!-- ライブラリを読み込む -->
+    <script src="https://cdn.jsdelivr.net/npm/blockly@1.0.0/python_compressed.min.js"></script> <!-- ライブラリを読み込む -->
     <script src="https://cdn.jsdelivr.net/npm/blockly@1.0.0/msg/js/en.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.3"></script>
     <title>Document</title>
 </head>
 
@@ -182,11 +184,14 @@
                                     
                                 </div>
                             </div>
-                      
-                            <img src="img/plays.png" width="100%" alt="">
+                            <div id="send_code">
+                                <button v-on:click=greet><img src="img/plays.png" width="100%" alt=""></button>
+                                <p>code is " {{ code }} ".</p>
+                            </div>
                             <div class="row">
                           <div class="btn btn-2084 center">Share!
                           </div>
+                          
                               
                             </div>
                         </div>
@@ -203,7 +208,39 @@
     <script>
         var workspace = Blockly.inject('blocklyDiv',                                                  // ライブラリに読み込ませる
           {toolbox: document.getElementById('toolbox')});
-      </script>
+    </script>
+    <script>
+        var send_code = new Vue({
+            el: '#send_code',
+            data: {
+                code: 0
+            },
+            methods: {
+                greet: function (event) {
+                    var code = Blockly.Python.workspaceToCode(workspace);
+                    this.code = code
+                    // POST /someUrl
+                    this.$http.post('遥彼方へ', {foo: code}).then(response => {
+
+                        // get status
+                        response.status;
+
+                        // get status text
+                        response.statusText;
+
+                        // get 'Expires' header
+                        response.headers.get('Expires');
+
+                        // get body data
+                        this.someData = response.body;
+
+                        }, response => {
+                        // error callback
+                    });
+                }
+            }
+        })
+    </script>
 </body>
 
 </html>
