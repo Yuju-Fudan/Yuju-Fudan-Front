@@ -197,11 +197,39 @@ a{
 .nums4{
     background-color: rgb(250, 196, 255);
 }
+.nums8{
+    background-color: rgb(255, 231, 196);
+}
+.nums16{
+    background-color: rgb(196, 208, 255);
+}
+.nums32{
+    background-color: rgb(228, 196, 255);
+}
+.nums64{
+    background-color: rgb(196, 248, 255);
+}
+.nums128{
+    background-color: rgb(235, 196, 255);
+}
+.nums256{
+    background-color: rgb(255, 196, 196);
+}
+.nums512{
+    background-color: rgb(196, 227, 255);
+}
+.nums1024{
+    background-color: rgb(221, 196, 255);
+}
+.nums2048{
+    background-color: rgb(226, 98, 89);
+}
 .numsN{
     background: none;
     border: none;
     box-shadow: none;
 }
-.nums128{
-    background-color: rgb(255, 200, 196);
+.list-group-item{
+    background-color: rgba(240, 248, 255, 0.611);
+    border: none;
 }
