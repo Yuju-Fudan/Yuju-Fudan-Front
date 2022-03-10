@@ -66,13 +66,12 @@
 
                         <xml id="toolbox" style="display: none">
                             <!-- ブロックサンプルを用意 -->
-                            <block type="controls_if"></block>
-                            <block type="controls_repeat_ext"></block>
-                            <block type="logic_compare"></block>
-                            <block type="math_number"></block>
-                            <block type="math_arithmetic"></block>
-                            <block type="text"></block>
-                            <block type="text_print"></block>
+                            <block type="index"></block>
+                            <block type="culumn"></block>
+                            <block type="min"></block>
+                            <block type="getnumber"></block>
+                            <block type="max"></block>
+                       
                         </xml>
                     </div>
                 </div>
@@ -185,7 +184,18 @@
                                 </div>
                             </div>
                             <div id="send_code">
-                                <button v-on:click=greet><img src="img/plays.png" width="100%" alt=""></button>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <a v-on:click=greet><img src="img/play.png" width="100%" alt=""></a>
+                                        </div>
+                                        <div class="col-5">
+                                            <a v-on:click=greet><img src="img/rerun.png" width="100%" alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                             
+    
                                 <p>code is " {{ code }} ".</p>
                             </div>
                             <div class="row">

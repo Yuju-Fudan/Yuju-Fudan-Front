@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/blockly/blockly.min.js"></script>
+  <script>
+    Blockly.Blocks['console_log'] = {
+      init: function () {
+        this.appendDummyInput()
+          .appendField(new Blockly.FieldTextInput("ログ"), "log")
+          .appendField("出力");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(230);
+        this.setTooltip("");
+        this.setHelpUrl("");
+      }
+    };
+    Blockly.JavaScript['console_log'] = function (block) {
+      const text_log = block.getFieldValue('log');
+      const code = 'console.log(\''+ text_log+'\');\n';
+      return code;
+    };
+
+    Blockly.Blocks['wait'] = {
+      init: function () {
+        this.appendDummyInput()
+          .appendField(new Blockly.FieldNumber(1), "sec")
+          .appendField("秒待つ");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(230);
+        this.setTooltip("");
+        this.setHelpUrl("");
+      }
+    };
+    Blockly.JavaScript['wait'] = function (block) {
+      const number_sec = block.getFieldValue('sec');
+      const code = 'await sleep('+ number_sec+');\n';
+      return code;
+    };
+  </script>
+
+  <title>Blockly test</title>
+</head>
+
+<body>
+  <!-- Toolboxのブロック -->
+  <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+    <block type="math_number">
+      <field name="NUM">123</field>
+    </block>
+    <block type="text"></block>
+    <block type="text_print"></block>
+    <block type="console_log"></block>
+    <block type="wait"></block>
+  </xml>
+
+  <!-- Workspace -->
+  <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
+
+  <!-- 実行ボタン -->
+  <button onclick="run()">実行</button>
+
+  <script>
+    const demoWorkspace = Blockly.inject('blocklyDiv',
+      {
+        media: 'https://unpkg.com/blockly/media/',
+        toolbox: document.getElementById('toolbox')
+      });
+
+    function sleep(time) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve();
+        }, time * 1000);
+      });
+    }
+
+    function run() {
+      const code = '(async () => {'+Blockly.JavaScript.workspaceToCode(demoWorkspace) + '})();';
+      console.log(code);
+      try {
+        eval(code);
+      } catch (e) {
+        alert(e);
+      }
+    }
+  </script>
+</body>
+</html>
