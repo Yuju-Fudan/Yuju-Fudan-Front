@@ -58,3 +58,14 @@ Blockly.Blocks['index'] = {
    this.setHelpUrl("");
     }
   };
+
+  Blockly.Blocks['movetoleft'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("MoveToLeft");
+      this.setOutput(true, "String");
+      this.setColour(230);
+   this.setTooltip("MoveToLeft");
+   this.setHelpUrl("");
+    }
+  };
