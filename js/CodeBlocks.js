@@ -1,9 +1,8 @@
 Blockly.Blocks['column'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["1","a"], ["2","b"], ["3","c"], ["4","d"]]), "column")
+        .appendField(new Blockly.FieldDropdown([["1","a"], ["2","b"], ["3","c"], ["4","d"]]), "column_list")
         .appendField("列目");
-    this.setInputsInline(true);
     this.setOutput(true, "location");
     this.setColour(0);
  this.setTooltip("");
@@ -14,7 +13,7 @@ Blockly.Blocks['column'] = {
 Blockly.Blocks['row'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["4","4"]]), "row")
+        .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["4","4"]]), "row_list")
         .appendField("行目");
     this.setOutput(true, "location");
     this.setColour(0);
@@ -26,11 +25,10 @@ Blockly.Blocks['row'] = {
 Blockly.Blocks['col_and_row'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["1","a"], ["2","b"], ["3","c"], ["4","d"]]), "col")
+        .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["4","4"]]), "row_list")
         .appendField("列目の")
-        .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["4","4"]]), "row")
+        .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["4","4"]]), "row_list")
         .appendField("行目");
-    this.setInputsInline(true);
     this.setOutput(true, "location");
     this.setColour(0);
  this.setTooltip("");
@@ -57,12 +55,12 @@ Blockly.Blocks['get_locations_from_value'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("値が");
-    this.appendValueInput("location")
+    this.appendValueInput("value")
         .setCheck("Number");
     this.appendDummyInput()
         .appendField("の座標");
-    this.setOutput(true, "Array");
-    this.setColour(0);
+    this.setOutput(true, "location");
+    this.setColour(180);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -72,7 +70,7 @@ Blockly.Blocks['get_number_of_value'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("値が");
-    this.appendValueInput("location")
+    this.appendValueInput("value")
         .setCheck("Number");
     this.appendDummyInput()
         .appendField("の個数");
@@ -214,7 +212,7 @@ Blockly.Blocks['random_number'] = {
         .setCheck("Number");
     this.appendDummyInput()
         .appendField("内の乱数");
-    this.setOutput(true, null);
+    this.setOutput(true, "Number");
     this.setColour(180);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -224,31 +222,7 @@ Blockly.Blocks['random_number'] = {
 Blockly.Blocks['move_to_left'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("左へスライド");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(90);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['move_to_up'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("上へスライド");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(90);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['move_to_down'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("下へスライド");
+        .appendField("左へスライドする");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(90);
@@ -260,7 +234,31 @@ Blockly.Blocks['move_to_down'] = {
 Blockly.Blocks['move_to_right'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("右へスライド");
+        .appendField("右へスライドする");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(90);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['move_to_up'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("上へスライドする");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(90);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['move_to_down'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("下へスライドする");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(90);
@@ -272,7 +270,7 @@ Blockly.Blocks['move_to_right'] = {
 Blockly.Blocks['move_randomly'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("ランダムにスライド");
+        .appendField("ランダムな方向へスライドする");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(90);
@@ -284,7 +282,7 @@ Blockly.Blocks['move_randomly'] = {
 Blockly.Blocks['invert_horizontally'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("左右を反転する");
+        .appendField("左右に反転する");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(90);
@@ -296,7 +294,7 @@ Blockly.Blocks['invert_horizontally'] = {
 Blockly.Blocks['invert_vertically'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("上下を反転する");
+        .appendField("上下に反転する");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(90);
@@ -325,7 +323,7 @@ Blockly.Blocks['greater'] = {
         .appendField("＞");
     this.appendValueInput("value2")
         .setCheck("Number");
-    this.setOutput(true, "Boolean");
+    this.setOutput(true, null);
     this.setColour(45);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -340,7 +338,7 @@ Blockly.Blocks['smaller'] = {
         .appendField("＜");
     this.appendValueInput("value2")
         .setCheck("Number");
-    this.setOutput(true, "Boolean");
+    this.setOutput(true, null);
     this.setColour(45);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -349,13 +347,13 @@ Blockly.Blocks['smaller'] = {
 
 Blockly.Blocks['more_than'] = {
   init: function() {
-    this.appendValueInput("values1")
+    this.appendValueInput("value1")
         .setCheck("Number");
     this.appendDummyInput()
         .appendField("≧");
-    this.appendValueInput("values2")
+    this.appendValueInput("value2")
         .setCheck("Number");
-    this.setOutput(true, "Boolean");
+    this.setOutput(true, null);
     this.setColour(45);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -364,13 +362,13 @@ Blockly.Blocks['more_than'] = {
 
 Blockly.Blocks['less_than'] = {
   init: function() {
-    this.appendValueInput("values1")
+    this.appendValueInput("value1")
         .setCheck("Number");
     this.appendDummyInput()
         .appendField("≦");
-    this.appendValueInput("values2")
+    this.appendValueInput("value2")
         .setCheck("Number");
-    this.setOutput(true, "Boolean");
+    this.setOutput(true, null);
     this.setColour(45);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -379,15 +377,15 @@ Blockly.Blocks['less_than'] = {
 
 Blockly.Blocks['equal'] = {
   init: function() {
-    this.appendValueInput("values1")
+    this.appendValueInput("value1")
         .setCheck("Number");
     this.appendDummyInput()
         .appendField("と");
-    this.appendValueInput("values2")
+    this.appendValueInput("value2")
         .setCheck("Number");
     this.appendDummyInput()
         .appendField("が等しい");
-    this.setOutput(true, "Boolean");
+    this.setOutput(true, null);
     this.setColour(45);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -396,13 +394,13 @@ Blockly.Blocks['equal'] = {
 
 Blockly.Blocks['and'] = {
   init: function() {
-    this.appendValueInput("condition1")
-        .setCheck("Boolean");
+    this.appendValueInput("value1")
+        .setCheck("Number");
     this.appendDummyInput()
         .appendField("かつ");
-    this.appendValueInput("condition2")
-        .setCheck("Boolean");
-    this.setOutput(true, "Boolean");
+    this.appendValueInput("value2")
+        .setCheck("Number");
+    this.setOutput(true, null);
     this.setColour(45);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -411,13 +409,13 @@ Blockly.Blocks['and'] = {
 
 Blockly.Blocks['or'] = {
   init: function() {
-    this.appendValueInput("condition1")
-        .setCheck("Boolean");
+    this.appendValueInput("value1")
+        .setCheck("Number");
     this.appendDummyInput()
         .appendField("または");
-    this.appendValueInput("condition2")
-        .setCheck("Boolean");
-    this.setOutput(true, "Boolean");
+    this.appendValueInput("value2")
+        .setCheck("Number");
+    this.setOutput(true, null);
     this.setColour(45);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -426,11 +424,11 @@ Blockly.Blocks['or'] = {
 
 Blockly.Blocks['not'] = {
   init: function() {
-    this.appendValueInput("condition1")
-        .setCheck("Boolean");
+    this.appendValueInput("value")
+        .setCheck("Number");
     this.appendDummyInput()
         .appendField("ではない");
-    this.setOutput(true, "Boolean");
+    this.setOutput(true, null);
     this.setColour(45);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -509,7 +507,7 @@ Blockly.Blocks['while'] = {
 
 Blockly.Blocks['for'] = {
   init: function() {
-    this.appendValueInput("value")
+    this.appendValueInput("values")
         .setCheck("Number");
     this.appendDummyInput()
         .appendField("回繰り返す");
@@ -527,28 +525,10 @@ Blockly.Blocks['value'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("値")
-        .appendField(new Blockly.FieldNumber(0), "value");
+        .appendField(new Blockly.FieldNumber(0), "NAME");
     this.setOutput(true, "Number");
     this.setColour(180);
  this.setTooltip("");
  this.setHelpUrl("");
   }
 };
-
-Blockly.Blocks['variable'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField(new Blockly.FieldVariable("variable"), "var")
-        .appendField("を");
-    this.appendValueInput("value")
-        .setCheck("Number");
-    this.appendDummyInput()
-        .appendField("にする");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(90);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
