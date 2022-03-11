@@ -148,7 +148,8 @@
                     params.append("password", password)
                     console.log("email", email)
                     console.log("password", password)
-                    sleep(5000);
+                    const _sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+                    await _sleep(50000);
                     axios.post('https://gazeat.herokuapp.com/api/register/', params)
                         .then(response => console.log(response))
                         .catch(error => console.log(error))
@@ -162,7 +163,8 @@
                     params.append("password", password)
                     console.log("email", email)
                     console.log("password", password)
-                    sleep(5000);
+                    const _sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+                    await _sleep(50000);
                     axios.post('https://gazeat.herokuapp.com/api/login/', params, header = header)
                         .then(response => console.log(response))
                         .catch(error => console.log(error))
