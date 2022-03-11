@@ -151,11 +151,12 @@
                 },
                 loginAccount: function () {
                     const params = new URLSearchParams();
+                    const header = { "Content-Type": "application/json" };
                     let email = document.getElementById('Email1');
                     let password = document.getElementById('Password');
                     params.append("email", email)
                     params.append("password", password)
-                    axios.post('https://gazeat.herokuapp.com/api/login/', params)
+                    axios.post('https://gazeat.herokuapp.com/api/login/', params, header = header)
                         .then(response => console.log(response))
                         .catch(error => console.log(error))
                     window.location.href = 'console.html';
