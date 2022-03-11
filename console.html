@@ -22,9 +22,11 @@
     <script src="https://cdn.jsdelivr.net/npm/blockly@1.0.0/blockly_compressed.min.js"></script> <!-- ライブラリを読み込む -->
     <script src="https://cdn.jsdelivr.net/npm/blockly@1.0.0/blocks_compressed.min.js"></script> <!-- ライブラリを読み込む -->
     <script src="https://cdn.jsdelivr.net/npm/blockly@1.0.0/python_compressed.min.js"></script> <!-- ライブラリを読み込む -->
+    <script src="https://cdn.jsdelivr.net/npm/blockly@1.0.0/javascript_compressed.min.js"></script> <!-- ライブラリを読み込む -->
     <script src="https://cdn.jsdelivr.net/npm/blockly@1.0.0/msg/js/en.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.3"></script>
+    
     <title>Document</title>
 </head>
 
@@ -66,6 +68,13 @@
 
                         <xml id="toolbox" style="display: none">
                             <category name="座標" colour="0">
+                                <block type="controls_if"></block>
+                            <block type="controls_repeat_ext"></block>
+                            <block type="logic_compare"></block>
+                            <block type="math_number"></block>
+                            <block type="math_arithmetic"></block>
+                            <block type="text"></block>
+                            <block type="text_print"></block>
                                 <block type="column"></block>
                                 <block type="row"></block>
                                 <block type="col_and_row"></block>
@@ -286,9 +295,7 @@
     <span class="light">2022 Yuju-Fudan</span>
     <img src="img/backright.png" class="right" alt="">
     <img src="img/backleft.png" class="left" alt="">
-    <script src="js/CodeBlocks.js"></script>
-    <script src="https://unpkg.com/vue@next"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
 
     <script>
         var workspace = Blockly.inject('blocklyDiv',                                                  // ライブラリに読み込ませる
@@ -304,28 +311,31 @@
                 greet: function (event) {
                     var code = Blockly.Python.workspaceToCode(workspace);
                     this.code = code
-                    // POST /someUrl
-                    this.$http.post('遥彼方へ', {foo: code}).then(response => {
+                    // // POST /someUrl
+                    // this.$http.post('遥彼方へ', {foo: code}).then(response => {
 
-                        // get status
-                        response.status;
+                    //     // get status
+                    //     response.status;
 
-                        // get status text
-                        response.statusText;
+                    //     // get status text
+                    //     response.statusText;
 
-                        // get 'Expires' header
-                        response.headers.get('Expires');
+                    //     // get 'Expires' header
+                    //     response.headers.get('Expires');
 
-                        // get body data
-                        this.someData = response.body;
+                    //     // get body data
+                    //     this.someData = response.body;
 
-                        }, response => {
-                        // error callback
-                    });
+                    //     }, response => {
+                    //     // error callback
+                    // });
                 }
             }
         })
     </script>
+    <script src="js/CodeBlocks.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </body>
 
 </html>
