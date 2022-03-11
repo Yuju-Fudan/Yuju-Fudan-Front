@@ -187,7 +187,7 @@
                             <div id="send_code">
                                 <button v-on:click=greet><img src="img/plays.png" width="100%" alt=""></button>
                                 <p>code is " {{ code }} ".</p>
-                                <p>{{}}</p>
+                                <p>{{result[1]}}</p>
                             </div>
                             <div class="row">
                           <div class="btn btn-2084 center">Share!
@@ -221,8 +221,11 @@
             methods: {
                 greet: function (event) {
                     var code = Blockly.Python.workspaceToCode(workspace);
+                    var result = [{"0": {"score": 0,"location": {"a1": 2,"b1": 0, "c1": 0,"d1": 0,"a2": 2,"b2": 0,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 0,"c4": 0,"d4": 0}},"1": {"score": 4,"location": {"a1": 4,"b1": 0, "c1": 0,"d1": 0,"a2": 0,"b2": 2,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 0,"c4": 0,"d4": 0}}}];
                     this.code = code
-                    axios.get('https://jsonplaceholder.typicode.com/users')
+                    axios.get('https://gazeat.herokuapp.com/api/post_game_status/',
+                    'b.move_to_left() b.move_to_up() b.move_to_down() b.move_to_right()', 
+                    {withCredentials: true})
                         .then(response => this.result = response.data)
                         .catch(error => console.log(error))
                 }
