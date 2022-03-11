@@ -67,8 +67,10 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <button @click="loginAccount" type="submit"
-                                            class="btn btn-2084">&#x1f3b2;ログイン</button>
+                                        <!-- <button @click="loginAccount" type="submit"
+                                            class="btn btn-2084">&#x1f3b2;ログイン</button> -->
+                                        <a href="console.html"><button @click="loginAccount" type="submit"
+                                                class="btn btn-2084">&#x1f3b2;ログイン</button></a>
                                     </div>
                                     <!-- <div id="register" class="col-sm-6"> -->
                                     <div class="col-sm-6">
@@ -146,7 +148,7 @@
                     let password = document.getElementById('Password');
                     params.append("email", email.value)
                     params.append("password", password.value)
-                    console.log("v6")
+                    console.log("v7")
                     location = 'https://yuju-fudan.github.io/Yuju-Fudan-Front/console.html';
                     console.log("email", email.value)
                     console.log("password", password.value)
@@ -161,7 +163,7 @@
                     let password = document.getElementById('Password');
                     params.append("email", email.value)
                     params.append("password", password.value)
-                    console.log("v6")
+                    console.log("v7")
                     console.log("email", email.value)
                     console.log("password", password.value)
                     axios.post('https://gazeat.herokuapp.com/api/login/', params, header = header)
