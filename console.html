@@ -22,15 +22,19 @@
     <script src="https://cdn.jsdelivr.net/npm/blockly@1.0.0/blockly_compressed.min.js"></script> <!-- ライブラリを読み込む -->
     <script src="https://cdn.jsdelivr.net/npm/blockly@1.0.0/blocks_compressed.min.js"></script> <!-- ライブラリを読み込む -->
     <script src="https://cdn.jsdelivr.net/npm/blockly@1.0.0/python_compressed.min.js"></script> <!-- ライブラリを読み込む -->
+    <script src="https://cdn.jsdelivr.net/npm/blockly@1.0.0/javascript_compressed.min.js"></script> <!-- ライブラリを読み込む -->
     <script src="https://cdn.jsdelivr.net/npm/blockly@1.0.0/msg/js/en.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.3"></script>
+    
     <title>Document</title>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg ">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">
+            <img src="img/logos.png" width="120px" alt="">
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -52,6 +56,7 @@
         </div>
       </nav>
     <div class="container">
+        <div id="send_code">
         <div class="row">
             <div style="margin-top: 40px;" class="col-md-12 center">
                 <h1>Score hogehogept</h1>
@@ -66,6 +71,13 @@
 
                         <xml id="toolbox" style="display: none">
                             <category name="座標" colour="0">
+                                <block type="controls_if"></block>
+                            <block type="controls_repeat_ext"></block>
+                            <block type="logic_compare"></block>
+                            <block type="math_number"></block>
+                            <block type="math_arithmetic"></block>
+                            <block type="text"></block>
+                            <block type="text_print"></block>
                                 <block type="column"></block>
                                 <block type="row"></block>
                                 <block type="col_and_row"></block>
@@ -149,111 +161,111 @@
                                 <div class="container-fluid center">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <div class="row" style="width: 256px;">
-                                                <div class="col-3">
-                                                    <div class="box nums2">
-                                                        <p class="nums">2</p>
+                                            <div id="show_board">
+                                                <div class="row" style="width: 256px;">
+                                                    <div class="col-3">
+                                                        <div class="box nums2">
+                                                            <p class="nums">{{result[0][0]}}</p>
+                                                        </div>
+
                                                     </div>
+                                                    <div class="col-3">
+                                                        <div class="box nums2">
+                                                            <p class="nums">2</p>
+                                                        </div>
 
-                                                </div>
-                                                <div class="col-3">
-                                                    <div class="box nums2">
-                                                        <p class="nums">2</p>
                                                     </div>
+                                                    <div class="col-3">
+                                                        <div class="box nums4">
+                                                            <p class="nums">4</p>
+                                                        </div>
 
-                                                </div>
-                                                <div class="col-3">
-                                                    <div class="box nums4">
-                                                        <p class="nums">4</p>
                                                     </div>
+                                                    <div class="col-3">
+                                                        <div class="box nums4">
+                                                            <p class="nums">4</p>
+                                                        </div>
 
-                                                </div>
-                                                <div class="col-3">
-                                                    <div class="box nums4">
-                                                        <p class="nums">4</p>
                                                     </div>
+                                                    <div class="col-3">
+                                                        <div class="box numsN">
+                                                            <p class="nums"></p>
+                                                        </div>
 
-                                                </div>
-                                                <div class="col-3">
-                                                    <div class="box numsN">
-                                                        <p class="nums"></p>
                                                     </div>
+                                                    <div class="col-3">
+                                                        <div class="box">
+                                                            <p class="nums">1</p>
+                                                        </div>
 
-                                                </div>
-                                                <div class="col-3">
-                                                    <div class="box">
-                                                        <p class="nums">1</p>
                                                     </div>
+                                                    <div class="col-3">
+                                                        <div class="box">
+                                                            <p class="nums">1</p>
+                                                        </div>
 
-                                                </div>
-                                                <div class="col-3">
-                                                    <div class="box">
-                                                        <p class="nums">1</p>
                                                     </div>
+                                                    <div class="col-3">
+                                                        <div class="box nums128">
+                                                            <p class="nums">128</p>
+                                                        </div>
 
-                                                </div>
-                                                <div class="col-3">
-                                                    <div class="box nums128">
-                                                        <p class="nums">128</p>
                                                     </div>
+                                                    <div class="col-3">
+                                                        <div class="box">
+                                                            <p class="nums">1</p>
+                                                        </div>
 
-                                                </div>
-                                                <div class="col-3">
-                                                    <div class="box">
-                                                        <p class="nums">1</p>
                                                     </div>
+                                                    <div class="col-3">
+                                                        <div class="box numsN">
+                                                            <p class="nums"></p>
+                                                        </div>
 
-                                                </div>
-                                                <div class="col-3">
-                                                    <div class="box numsN">
-                                                        <p class="nums"></p>
                                                     </div>
+                                                    <div class="col-3">
+                                                        <div class="box numsN">
+                                                            <p class="nums"></p>
+                                                        </div>
 
-                                                </div>
-                                                <div class="col-3">
-                                                    <div class="box numsN">
-                                                        <p class="nums"></p>
                                                     </div>
+                                                    <div class="col-3">
+                                                        <div class="box">
+                                                            <p class="nums">1</p>
+                                                        </div>
 
-                                                </div>
-                                                <div class="col-3">
-                                                    <div class="box">
-                                                        <p class="nums">1</p>
                                                     </div>
+                                                    <div class="col-3">
+                                                        <div class="box">
+                                                            <p class="nums">1</p>
+                                                        </div>
 
-                                                </div>
-                                                <div class="col-3">
-                                                    <div class="box">
-                                                        <p class="nums">1</p>
                                                     </div>
+                                                    <div class="col-3">
+                                                        <div class="box">
+                                                            <p class="nums">1</p>
+                                                        </div>
 
-                                                </div>
-                                                <div class="col-3">
-                                                    <div class="box">
-                                                        <p class="nums">1</p>
                                                     </div>
+                                                    <div class="col-3">
+                                                        <div class="box nums4">
+                                                            <p class="nums">4</p>
+                                                        </div>
 
-                                                </div>
-                                                <div class="col-3">
-                                                    <div class="box nums4">
-                                                        <p class="nums">4</p>
                                                     </div>
+                                                    <div class="col-3">
+                                                        <div class="box">
+                                                            <p class="nums">1</p>
+                                                        </div>
 
-                                                </div>
-                                                <div class="col-3">
-                                                    <div class="box">
-                                                        <p class="nums">1</p>
                                                     </div>
-
                                                 </div>
-
-
                                             </div>
                                         </div>
                                     </div>
 
                                 </div>
-                                <div id="send_code">
+                                <div>
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-6">
@@ -266,7 +278,7 @@
                                     </div>
 
 
-                                    <p>code is " {{ code }} ".</p>
+                                    <p>code is " {{ code }} ".<br>{{result}}</p>
                                 </div>
                                 <div class="row">
                               <div class="btn btn-2084 center">Share!
@@ -282,13 +294,12 @@
 
             </div>
         </div>
+        </div>
     </div>
     <span class="light">2022 Yuju-Fudan</span>
     <img src="img/backright.png" class="right" alt="">
     <img src="img/backleft.png" class="left" alt="">
-    <script src="js/CodeBlocks.js"></script>
-    <script src="https://unpkg.com/vue@next"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
 
     <script>
         var workspace = Blockly.inject('blocklyDiv',                                                  // ライブラリに読み込ませる
@@ -298,34 +309,34 @@
         var send_code = new Vue({
             el: '#send_code',
             data: {
-                code: 0
+                code: "",
+                result: 0
             },
             methods: {
                 greet: function (event) {
                     var code = Blockly.Python.workspaceToCode(workspace);
+                    this.result = [{"0": {"score": 0,"location": {"a1": 2,"b1": 0, "c1": 0,"d1": 0,"a2": 2,"b2": 0,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 0,"c4": 0,"d4": 0}},"1": {"score": 4,"location": {"a1": 4,"b1": 0, "c1": 0,"d1": 0,"a2": 0,"b2": 2,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 0,"c4": 0,"d4": 0}}}];
                     this.code = code
-                    // POST /someUrl
-                    this.$http.post('遥彼方へ', {foo: code}).then(response => {
-
-                        // get status
-                        response.status;
-
-                        // get status text
-                        response.statusText;
-
-                        // get 'Expires' header
-                        response.headers.get('Expires');
-
-                        // get body data
-                        this.someData = response.body;
-
-                        }, response => {
-                        // error callback
-                    });
+                    // this.result = result
+                    // axios.get('https://gazeat.herokuapp.com/post_game_status',
+                    // 'b.move_to_left() b.move_to_up() b.move_to_down() b.move_to_right()', 
+                    // {withCredentials: true})
+                    //     .then(response => this.result = response.data)
+                    //     .catch(error => console.log(error))
                 }
             }
         })
+
+        // var show_board = new Vue({
+        //     el: '#show_board',
+        //     data: {
+        //         result: send_code.result
+        //     },
+        // })
     </script>
+    <script src="js/CodeBlocks.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </body>
 
 </html>

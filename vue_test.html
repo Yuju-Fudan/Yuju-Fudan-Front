@@ -1,22 +1,240 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="index.css">
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    </head>
-    <body>
-        
-        <div id="example-1">
-            <button v-on:click="counter += 1">Add 1</button>
-            <p>The button above has been clicked {{ counter }} times.</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/blockly@1.0.0/blockly_compressed.min.js"></script> <!-- ライブラリを読み込む -->
+    <script src="https://cdn.jsdelivr.net/npm/blockly@1.0.0/blocks_compressed.min.js"></script> <!-- ライブラリを読み込む -->
+    <script src="https://cdn.jsdelivr.net/npm/blockly@1.0.0/python_compressed.min.js"></script> <!-- ライブラリを読み込む -->
+    <script src="https://cdn.jsdelivr.net/npm/blockly@1.0.0/msg/js/en.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.3"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg ">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
         </div>
+      </nav>
+    <div class="container">
+        <div class="row">
+            <div style="margin-top: 40px;" class="col-md-12 center">
+                <h1>Score hogehogept</h1>
+
+            </div>
+        </div>
+        <div class="row" style="margin-top:80px">
+            <div class="col-md-8">
+                <div class="card console-block">
+                    <div class="card-body">
+                        <div id="blocklyDiv" class="consoles" style="height: 480px; width: 600px;"></div>
+
+                        <xml id="toolbox" style="display: none">
+                            <!-- ブロックサンプルを用意 -->
+                            <block type="controls_if"></block>
+                            <block type="controls_repeat_ext"></block>
+                            <block type="logic_compare"></block>
+                            <block type="math_number"></block>
+                            <block type="math_arithmetic"></block>
+                            <block type="text"></block>
+                            <block type="text_print"></block>
+                        </xml>
+                    </div>
+                </div>
         
-        <script>
-            var example1 = new Vue({
-                el: '#example-1',
-                data: {
-                    counter: 0
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="card play_area">
+                        <div class=" margins">
+                            <div class="container-fluid center">
+                                <div class="row" style="width: 256px;">
+                                    <div class="col-3">
+                                        <div class="box nums2">
+                                            <p class="nums"></p>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="box nums2">
+                                            <p class="nums">2</p>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="box nums4">
+                                            <p class="nums">4</p>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="box nums4">
+                                            <p class="nums">4</p>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="box numsN">
+                                            <p class="nums"></p>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="box">
+                                            <p class="nums">1</p>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="box">
+                                            <p class="nums">1</p>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="box nums128">
+                                            <p class="nums">128</p>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="box">
+                                            <p class="nums">1</p>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="box numsN">
+                                            <p class="nums"></p>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="box numsN">
+                                            <p class="nums"></p>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="box">
+                                            <p class="nums">1</p>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="box">
+                                            <p class="nums">1</p>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="box">
+                                            <p class="nums">1</p>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="box nums4">
+                                            <p class="nums">4</p>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="box">
+                                            <p class="nums">1</p>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                    
+                                </div>
+                            </div>
+                            <div id="send_code">
+                                <button v-on:click=greet><img src="img/plays.png" width="100%" alt=""></button>
+                                <p>code is " {{ code }} ".</p>
+                                <p>{{result[1]}}</p>
+                            </div>
+                            <div class="row">
+                          <div class="btn btn-2084 center">Share!
+                          </div>
+                          
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             
+            </div>
+        </div>
+    </div>
+    <span class="light">2022 Yuju-Fudan</span>
+    <img src="img/backright.png" class="right" alt="">
+    <img src="img/backleft.png" class="left" alt="">
+    
+   
+    <script>
+        var workspace = Blockly.inject('blocklyDiv',                                                  // ライブラリに読み込ませる
+          {toolbox: document.getElementById('toolbox')});
+    </script>
+    <script>
+        var send_code = new Vue({
+            el: '#send_code',
+            data: {
+                code: "",
+                result: []
+            },
+            methods: {
+                greet: function (event) {
+                    var code = Blockly.Python.workspaceToCode(workspace);
+                    var result = [{"0": {"score": 0,"location": {"a1": 2,"b1": 0, "c1": 0,"d1": 0,"a2": 2,"b2": 0,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 0,"c4": 0,"d4": 0}},"1": {"score": 4,"location": {"a1": 4,"b1": 0, "c1": 0,"d1": 0,"a2": 0,"b2": 2,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 0,"c4": 0,"d4": 0}}}];
+                    this.code = code
+                    axios.get('https://gazeat.herokuapp.com/api/post_game_status/',
+                    'b.move_to_left() b.move_to_up() b.move_to_down() b.move_to_right()', 
+                    {withCredentials: true})
+                        .then(response => this.result = response.data)
+                        .catch(error => console.log(error))
                 }
-            })
-        </script>
-    </body>
+            }
+        })
+    </script>
+    <script src="js/CodeBlocks.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</body>
+
 </html>
