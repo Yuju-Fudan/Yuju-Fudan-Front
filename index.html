@@ -146,7 +146,8 @@
                     let password = document.getElementById('Password');
                     params.append("email", email.value)
                     params.append("password", password.value)
-                    console.log("v5")
+                    console.log("v6")
+                    location = 'https://yuju-fudan.github.io/Yuju-Fudan-Front/console.html';
                     console.log("email", email.value)
                     console.log("password", password.value)
                     axios.post('https://gazeat.herokuapp.com/api/register/', params)
@@ -160,14 +161,14 @@
                     let password = document.getElementById('Password');
                     params.append("email", email.value)
                     params.append("password", password.value)
-                    console.log("v5")
+                    console.log("v6")
                     console.log("email", email.value)
                     console.log("password", password.value)
                     axios.post('https://gazeat.herokuapp.com/api/login/', params, header = header)
                         .then(response => console.log(response))
                         .catch(error => console.log(error))
                     try {
-                        window.location.href = 'https://yuju-fudan.github.io/Yuju-Fudan-Front/console.html';
+                        location = 'https://yuju-fudan.github.io/Yuju-Fudan-Front/console.html';
                     } catch {
                         console.log("error")
                     }
