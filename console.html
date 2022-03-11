@@ -25,12 +25,16 @@
     <script src="https://cdn.jsdelivr.net/npm/blockly@1.0.0/msg/js/en.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.3"></script>
+    <script src="./js/generatorStub.js"></script>
     <title>Document</title>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg ">
-        <a class="navbar-brand" href="#"><img src="img/logos.png" width="120px" alt=""></a>
+        <a class="navbar-brand" href="#">
+            <h1>タイトルだぜ！</h1>
+            <!-- <img src="img/logos.png" width="120px" alt=""> -->
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -52,7 +56,7 @@
         </div>
       </nav>
     <div class="container">
-        <div id="send_code">
+        
         <div class="row">
             <div style="margin-top: 40px;" class="col-md-12 center">
                 <h1>Score hogehogept</h1>
@@ -67,12 +71,7 @@
 
                         <xml id="toolbox" style="display: none">
                             <category name="座標" colour="0">
-                                <block type="controls_if"></block>
-                            <block type="controls_repeat_ext"></block>
-                            <block type="logic_compare"></block>
-                            <block type="math_number"></block>
-                            <block type="math_arithmetic"></block>
-                            <block type="text"></block>
+                                <block type="text_print"></block>
                                 <block type="column"></block>
                                 <block type="row"></block>
                                 <block type="col_and_row"></block>
@@ -148,108 +147,110 @@
                 </div>
 
             </div>
+            
             <div class="col-md-4">
                 <div class="row">
                     <div class="col-12">
                         <div class="card play_area play">
                             <div class="">
+                                <div id="send_code">
                                 <div class="container-fluid center">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="row" style="width: 256px;">
                                                 <div class="col-3">
-                                                    <div class="box nums2">
-                                                        <p class="nums">{{result}}</p>
+                                                    <div id="a1" class="box nums0">
+                                                        <p class="nums">{{a1}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div class="box nums2">
-                                                        <p class="nums">2</p>
+                                                    <div id="b1" class="box nums0">
+                                                        <p class="nums">{{b1}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div class="box nums4">
-                                                        <p class="nums">4</p>
+                                                    <div id="c1" class="box nums0">
+                                                        <p class="nums">{{c1}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div class="box nums4">
-                                                        <p class="nums">4</p>
+                                                    <div id="d1" class="box nums0">
+                                                        <p class="nums">{{d1}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div class="box numsN">
-                                                        <p class="nums"></p>
+                                                    <div id="a2" class="box nums0">
+                                                        <p class="nums">{{a2}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div class="box">
-                                                        <p class="nums">1</p>
+                                                    <div id="b2" class="box nums0">
+                                                        <p class="nums">{{b2}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div class="box">
-                                                        <p class="nums">1</p>
+                                                    <div id="c2" class="box nums0">
+                                                        <p class="nums">{{c2}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div class="box nums128">
-                                                        <p class="nums">128</p>
+                                                    <div id="d2" class="box nums0">
+                                                        <p class="nums">{{d2}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div class="box">
-                                                        <p class="nums">1</p>
+                                                    <div id="a3" class="box nums0">
+                                                        <p class="nums">{{a3}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div class="box numsN">
-                                                        <p class="nums"></p>
+                                                    <div id="b3" class="box nums0">
+                                                        <p class="nums">{{b3}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div class="box numsN">
-                                                        <p class="nums"></p>
+                                                    <div id="c3" class="box nums0">
+                                                        <p class="nums">{{c3}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div class="box">
-                                                        <p class="nums">1</p>
+                                                    <div id="d3" class="box nums0">
+                                                        <p class="nums">{{d3}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div class="box">
-                                                        <p class="nums">1</p>
+                                                    <div id="a4" class="box nums0">
+                                                        <p class="nums">{{a4}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div class="box">
-                                                        <p class="nums">1</p>
+                                                    <div id="b4" class="box nums0">
+                                                        <p class="nums">{{b4}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div class="box nums4">
-                                                        <p class="nums">4</p>
+                                                    <div id="c4" class="box nums0">
+                                                        <p class="nums">{{c4}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div class="box">
-                                                        <p class="nums">1</p>
+                                                    <div id="d4" class="box nums0">
+                                                        <p class="nums">{{d4}}</p>
                                                     </div>
 
                                                 </div>
@@ -273,7 +274,7 @@
                                     </div>
 
 
-                                    <p>code is " {{ code }} ".<br>{{result}}</p>
+                                    <p>code is " {{ code }} ".</p>
                                 </div>
                                 <div class="row">
                               <div class="btn btn-2084 center">Share!
@@ -305,14 +306,126 @@
             el: '#send_code',
             data: {
                 code: "",
-                result: 0
+                result: 0,
+                a1: 0,
+                b1: 0,
+                c1: 0,
+                d1: 0,
+                a2: 0,
+                b2: 0,
+                c2: 0,
+                d2: 0,
+                a3: 0,
+                b3: 0,
+                c3: 0,
+                d3: 0,
+                a4: 0,
+                b4: 0,
+                c4: 0,
+                d4: 0,
+                step: 0
             },
             methods: {
                 greet: function (event) {
                     var code = Blockly.Python.workspaceToCode(workspace);
-                    this.result = [{"0": {"score": 0,"location": {"a1": 2,"b1": 0, "c1": 0,"d1": 0,"a2": 2,"b2": 0,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 0,"c4": 0,"d4": 0}},"1": {"score": 4,"location": {"a1": 4,"b1": 0, "c1": 0,"d1": 0,"a2": 0,"b2": 2,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 0,"c4": 0,"d4": 0}}}];
+                    result = [{"0": {"score": 0,"location": {"a1": 0,"b1": 0, "c1": 0,"d1": 0,"a2": 2,"b2": 0,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 2,"c4": 0,"d4": 0}},"1": {"score": 0,"location": {"a1": 2,"b1": 2, "c1": 0,"d1": 2,"a2": 0,"b2": 0,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 0,"c4": 0,"d4": 0}},"2": {"score": 4,"location": {"a1": 4,"b1": 2, "c1": 0,"d1": 0,"a2": 0,"b2": 0,"c2": 2,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 0,"c4": 0,"d4": 0}},"3": {"score": 4,"location": {"a1": 4,"b1": 2, "c1": 2,"d1": 0,"a2": 0,"b2": 0,"c2": 0,"d2": 0,"a3": 0,"b3": 2,"c3": 0,"d3": 0,"a4": 0,"b4": 0,"c4": 0,"d4": 0}},"4": {"score": 8,"location": {"a1": 4,"b1": 4, "c1": 2,"d1": 0,"a2": 0,"b2": 0,"c2": 0,"d2": 4,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 0,"c4": 0,"d4": 0}},"5": {"score": 16,"location": {"a1": 8,"b1": 2, "c1": 0,"d1": 0,"a2": 4,"b2": 4,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 0,"c4": 0,"d4": 0}},"6": {"score": 24,"location": {"a1": 8,"b1": 2, "c1": 0,"d1": 0,"a2": 8,"b2": 0,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 2,"c4": 0,"d4": 0}},"7": {"score": 44,"location": {"a1": 16,"b1": 4, "c1": 0,"d1": 0,"a2": 0,"b2": 0,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 0,"c4": 0,"d4": 2}},"8": {"score": 44,"location": {"a1": 16,"b1": 4, "c1": 0,"d1": 2,"a2": 0,"b2": 0,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 0,"c4": 0,"d4": 2}},"9": {"score": 48,"location": {"a1": 16,"b1": 4, "c1": 0,"d1": 4,"a2": 0,"b2": 0,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 2,"c4": 0,"d4": 0}},"10": {"score": 56,"location": {"a1": 16,"b1": 8, "c1": 0,"d1": 0,"a2": 0,"b2": 0,"c2": 0,"d2": 0,"a3": 2,"b3": 0,"c3": 0,"d3": 0,"a4": 2,"b4": 0,"c4": 0,"d4": 0}},"11": {"score": 60,"location": {"a1": 16,"b1": 8, "c1": 0,"d1": 0,"a2": 4,"b2": 0,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 2,"c4": 0,"d4": 0}}}];
                     this.code = code
-                    // this.result = result
+                    this.result = result
+
+                    this.$http.post('https://gazeat.herokuapp.com/api/post_game_status', {code: 'b.move_to_left() b.move_to_up() b.move_to_down() b.move_to_right()'}).then(response => {
+
+                    // get status
+                    response.status;
+
+                    // get status text
+                    response.statusText;
+
+                    // get 'Expires' header
+                    response.headers.get('Expires');
+
+                    // get body data
+                    this.someData = response.body;
+
+                    }, response => {
+                    // error callback
+                    });
+                    
+                    // POSTPOSTPOST
+                    // axios.post('https://gazeat.herokuapp.com/api/post_game_status',{withCredentials: true}, {
+                    //     code: 'b.move_to_left() b.move_to_up() b.move_to_down() b.move_to_right()'
+                    // })
+                    // .then(function (response) {
+                    //     console.log(response);
+                    // })
+                    // .catch(function (error) {
+                    //     console.log(error);
+                    // });
+                    // GETGETGET
+                    // axios.get('https://gazeat.herokuapp.com/post_game_status',
+                    // 'b.move_to_left() b.move_to_up() b.move_to_down() b.move_to_right()', 
+                    // {withCredentials: true})
+                        // .then(response => this.result = response.data)
+                        // .catch(error => console.log(error))
+                    // for (let step = 0; step < 3; step++) {
+                    // this.step = 0;
+                    setInterval(() => {
+                        // console.log(Object.keys(this.result[0]).length)
+                        if ( this.step < Object.keys(this.result[0]).length ) {
+                            console.log("aaa")
+                            this.a1 = result[0][this.step]["location"]["a1"]
+                            this.b1 = result[0][this.step]["location"]["b1"]
+                            this.c1 = result[0][this.step]["location"]["c1"]
+                            this.d1 = result[0][this.step]["location"]["d1"]
+                            this.a2 = result[0][this.step]["location"]["a2"]
+                            this.b2 = result[0][this.step]["location"]["b2"]
+                            this.c2 = result[0][this.step]["location"]["c2"]
+                            this.d2 = result[0][this.step]["location"]["d2"]
+                            this.a3 = result[0][this.step]["location"]["a3"]
+                            this.b3 = result[0][this.step]["location"]["b3"]
+                            this.c3 = result[0][this.step]["location"]["c3"]
+                            this.d3 = result[0][this.step]["location"]["d3"]
+                            this.a4 = result[0][this.step]["location"]["a4"]
+                            this.b4 = result[0][this.step]["location"]["b4"]
+                            this.c4 = result[0][this.step]["location"]["c4"]
+                            this.d4 = result[0][this.step]["location"]["d4"]
+                            var target = document.getElementById("a1");
+                            target.className = "box nums" + this.a1;
+                            var target = document.getElementById("b1");
+                            target.className = "box nums" + this.b1;
+                            var target = document.getElementById("c1");
+                            target.className = "box nums" + this.c1;
+                            var target = document.getElementById("d1");
+                            target.className = "box nums" + this.d1;
+                            var target = document.getElementById("a2");
+                            target.className = "box nums" + this.a2;
+                            var target = document.getElementById("b2");
+                            target.className = "box nums" + this.b2;
+                            var target = document.getElementById("c2");
+                            target.className = "box nums" + this.c2;
+                            var target = document.getElementById("d2");
+                            target.className = "box nums" + this.d2;
+                            var target = document.getElementById("a3");
+                            target.className = "box nums" + this.a3;
+                            var target = document.getElementById("b3");
+                            target.className = "box nums" + this.b3;
+                            var target = document.getElementById("c3");
+                            target.className = "box nums" + this.c3;
+                            var target = document.getElementById("d3");
+                            target.className = "box nums" + this.d3;
+                            var target = document.getElementById("a4");
+                            target.className = "box nums" + this.a4;
+                            var target = document.getElementById("b4");
+                            target.className = "box nums" + this.b4;
+                            var target = document.getElementById("c4");
+                            target.className = "box nums" + this.c4;
+                            var target = document.getElementById("d4");
+                            target.className = "box nums" + this.d4;
+                            this.step=this.step+1;
+                            console.log(this.step)
+                        } else {
+                            clearInterval();
+                        }
+                    }, 3000)}
                     // axios.get('https://gazeat.herokuapp.com/post_game_status',
                     // 'b.move_to_left() b.move_to_up() b.move_to_down() b.move_to_right()', 
                     // {withCredentials: true})
@@ -320,7 +433,7 @@
                     //     .catch(error => console.log(error))
                 }
             }
-        })
+        )
     </script>
     <script src="js/CodeBlocks.js"></script>
     <script src="https://unpkg.com/vue@next"></script>
