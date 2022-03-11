@@ -142,12 +142,12 @@
                 registerAccount: function () {
                     // axios.post('https://gazeat.herokuapp.com/api/register/')
                     // axios.post('https://gazeat.herokuapp.com/api/register?email=pien@pien.com&password=password')
-                    axios.post('https://gazeat.herokuapp.com/api/register/', {
-                        headers: { "Access-Control-Allow-Origin": "*" }
-                    }, {
-                        email: "pien@pien.com",
-                        password: "password"
-                    })
+                    axios.post('https://gazeat.herokuapp.com/api/register/',
+                        // { headers: { "Access-Control-Allow-Origin": "*" }}, 
+                        {
+                            email: "pien@pien.com",
+                            password: "password"
+                        })
                         .then(response => console.log(response))
                         .catch(error => console.log(error))
                 }
