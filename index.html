@@ -142,8 +142,8 @@
             methods: {
                 registerAccount: function () {
                     const params = new URLSearchParams();
-                    let email = document.getElementById('Email1');
-                    let password = document.getElementById('Password');
+                    let email = document.getElementById('Email1').value();
+                    let password = document.getElementById('Password').value();
                     params.append("email", email)
                     params.append("password", password)
                     console.log("email", email)
@@ -155,8 +155,8 @@
                 loginAccount: function () {
                     const params = new URLSearchParams();
                     const header = { "Content-Type": "application/json" };
-                    let email = document.getElementById('Email1');
-                    let password = document.getElementById('Password');
+                    let email = document.getElementById('Email1').value();
+                    let password = document.getElementById('Password').value();
                     params.append("email", email)
                     params.append("password", password)
                     console.log("email", email)
