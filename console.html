@@ -331,36 +331,15 @@
                     result = [{"0": {"score": 0,"location": {"a1": 0,"b1": 0, "c1": 0,"d1": 0,"a2": 2,"b2": 0,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 2,"c4": 0,"d4": 0}},"1": {"score": 0,"location": {"a1": 2,"b1": 2, "c1": 0,"d1": 2,"a2": 0,"b2": 0,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 0,"c4": 0,"d4": 0}},"2": {"score": 4,"location": {"a1": 4,"b1": 2, "c1": 0,"d1": 0,"a2": 0,"b2": 0,"c2": 2,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 0,"c4": 0,"d4": 0}},"3": {"score": 4,"location": {"a1": 4,"b1": 2, "c1": 2,"d1": 0,"a2": 0,"b2": 0,"c2": 0,"d2": 0,"a3": 0,"b3": 2,"c3": 0,"d3": 0,"a4": 0,"b4": 0,"c4": 0,"d4": 0}},"4": {"score": 8,"location": {"a1": 4,"b1": 4, "c1": 2,"d1": 0,"a2": 0,"b2": 0,"c2": 0,"d2": 4,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 0,"c4": 0,"d4": 0}},"5": {"score": 16,"location": {"a1": 8,"b1": 2, "c1": 0,"d1": 0,"a2": 4,"b2": 4,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 0,"c4": 0,"d4": 0}},"6": {"score": 24,"location": {"a1": 8,"b1": 2, "c1": 0,"d1": 0,"a2": 8,"b2": 0,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 2,"c4": 0,"d4": 0}},"7": {"score": 44,"location": {"a1": 16,"b1": 4, "c1": 0,"d1": 0,"a2": 0,"b2": 0,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 0,"c4": 0,"d4": 2}},"8": {"score": 44,"location": {"a1": 16,"b1": 4, "c1": 0,"d1": 2,"a2": 0,"b2": 0,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 0,"c4": 0,"d4": 2}},"9": {"score": 48,"location": {"a1": 16,"b1": 4, "c1": 0,"d1": 4,"a2": 0,"b2": 0,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 2,"c4": 0,"d4": 0}},"10": {"score": 56,"location": {"a1": 16,"b1": 8, "c1": 0,"d1": 0,"a2": 0,"b2": 0,"c2": 0,"d2": 0,"a3": 2,"b3": 0,"c3": 0,"d3": 0,"a4": 2,"b4": 0,"c4": 0,"d4": 0}},"11": {"score": 60,"location": {"a1": 16,"b1": 8, "c1": 0,"d1": 0,"a2": 4,"b2": 0,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 2,"c4": 0,"d4": 0}}}];
                     this.code = code
                     this.result = result
-
-                    this.$http.post('https://gazeat.herokuapp.com/api/post_game_status', {code: 'b.move_to_left() b.move_to_up() b.move_to_down() b.move_to_right()'}).then(response => {
-
-                    // get status
-                    response.status;
-
-                    // get status text
-                    response.statusText;
-
-                    // get 'Expires' header
-                    response.headers.get('Expires');
-
-                    // get body data
-                    this.someData = response.body;
-
-                    }, response => {
-                    // error callback
+                    axios.post('https://gazeat.herokuapp.com/api/post_game_status',{withCredentials: true}, {
+                        code: 'b.move_to_left() b.move_to_up() b.move_to_down() b.move_to_right()'
+                    })
+                    .then(function (response) {
+                        console.log(response);
+                    })
+                    .catch(function (error) {
+                        console.log(error);
                     });
-                    
-                    // POSTPOSTPOST
-                    // axios.post('https://gazeat.herokuapp.com/api/post_game_status',{withCredentials: true}, {
-                    //     code: 'b.move_to_left() b.move_to_up() b.move_to_down() b.move_to_right()'
-                    // })
-                    // .then(function (response) {
-                    //     console.log(response);
-                    // })
-                    // .catch(function (error) {
-                    //     console.log(error);
-                    // });
-                    // GETGETGET
                     // axios.get('https://gazeat.herokuapp.com/post_game_status',
                     // 'b.move_to_left() b.move_to_up() b.move_to_down() b.move_to_right()', 
                     // {withCredentials: true})
