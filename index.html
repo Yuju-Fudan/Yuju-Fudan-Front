@@ -153,8 +153,9 @@
                 // }
                 registerAccount: function () {
                     const params = new URLSearchParams();
-                    params.append(email, "pien@pien.com")
-                    params.append(password, "password")
+                    params.append("email", "pien@pien.com")
+                    params.append("password", "password")
+                    console.log("params: ", params)
                     axios.post('https://gazeat.herokuapp.com/api/register/', params)
                         .then(response => console.log(response))
                         .catch(error => console.log(error))
