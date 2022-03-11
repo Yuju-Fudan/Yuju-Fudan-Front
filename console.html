@@ -334,34 +334,34 @@
                     this.code = code
                     this.result = result
 
-                    this.$http.post('https://gazeat.herokuapp.com/api/post_game_status', { code: 'b.move_to_left() b.move_to_up() b.move_to_down() b.move_to_right()' }).then(response => {
+                    // this.$http.post('https://gazeat.herokuapp.com/api/post_game_status', { code: 'b.move_to_left() b.move_to_up() b.move_to_down() b.move_to_right()' }).then(response => {
 
-                        // get status
-                        response.status;
+                    //     // get status
+                    //     response.status;
 
-                        // get status text
-                        response.statusText;
+                    //     // get status text
+                    //     response.statusText;
 
-                        // get 'Expires' header
-                        response.headers.get('Expires');
+                    //     // get 'Expires' header
+                    //     response.headers.get('Expires');
 
-                        // get body data
-                        this.someData = response.body;
+                    //     // get body data
+                    //     this.someData = response.body;
 
-                    }, response => {
-                        // error callback
-                    });
+                    // }, response => {
+                    //     // error callback
+                    // });
 
                     // POSTPOSTPOST
-                    // axios.post('https://gazeat.herokuapp.com/api/post_game_status',{withCredentials: true}, {
-                    //     code: 'b.move_to_left() b.move_to_up() b.move_to_down() b.move_to_right()'
-                    // })
-                    // .then(function (response) {
-                    //     console.log(response);
-                    // })
-                    // .catch(function (error) {
-                    //     console.log(error);
-                    // });
+                    axios.post('https://gazeat.herokuapp.com/api/post_game_status', { withCredentials: true }, {
+                        code: 'b.move_to_left() b.move_to_up() b.move_to_down() b.move_to_right()'
+                    })
+                        .then(function (response) {
+                            console.log(response);
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
                     // GETGETGET
                     // axios.get('https://gazeat.herokuapp.com/post_game_status',
                     // 'b.move_to_left() b.move_to_up() b.move_to_down() b.move_to_right()', 
