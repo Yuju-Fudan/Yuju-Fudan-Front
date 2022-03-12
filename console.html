@@ -300,7 +300,7 @@
 
 
     <script>
-        var workspace = Blockly.inject('blocklyDiv',                                                  // ライブラリに読み込ませる
+        var workspace = Blockly.inject('blocklyDiv',
             { toolbox: document.getElementById('toolbox') });
     </script>
     <script>
@@ -334,29 +334,11 @@
                     this.code = code
                     this.result = result
 
-                    // this.$http.post('https://gazeat.herokuapp.com/api/post_game_status', { code: 'b.move_to_left() b.move_to_up() b.move_to_down() b.move_to_right()' }).then(response => {
-
-                    //     // get status
-                    //     response.status;
-
-                    //     // get status text
-                    //     response.statusText;
-
-                    //     // get 'Expires' header
-                    //     response.headers.get('Expires');
-
-                    //     // get body data
-                    //     this.someData = response.body;
-
-                    // }, response => {
-                    //     // error callback
-                    // });
-
                     // POSTPOSTPOST
                     let jwt_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJ1c2VybmFtZSI6ImlkOC0xQGV4YW1wbGUuY29tIiwiZXhwIjoxNjQ3MDQ2OTUxLCJlbWFpbCI6ImlkOC0xQGV4YW1wbGUuY29tIn0.JgPInKsrVeEmxIgCZXRHJTCl1ihKFS3RDt6xJuJzQZY"
                     let params = new URLSearchParams();
                     let header = {
-                        'Content-Type': 'application/json',
+                        "Content-Type": "application/json",
                         "Authorization": "JWT " + jwt_token
                     };
                     console.log("v10")
@@ -368,12 +350,6 @@
                         .catch(function (error) {
                             console.log(error);
                         });
-                    // GETGETGET
-                    // axios.get('https://gazeat.herokuapp.com/post_game_status',
-                    // 'b.move_to_left() b.move_to_up() b.move_to_down() b.move_to_right()', 
-                    // {withCredentials: true})
-                    // .then(response => this.result = response.data)
-                    // .catch(error => console.log(error))
                     // for (let step = 0; step < 3; step++) {
                     // this.step = 0;
                     setInterval(() => {
@@ -435,11 +411,6 @@
                         }
                     }, 3000)
                 }
-                // axios.get('https://gazeat.herokuapp.com/post_game_status',
-                // 'b.move_to_left() b.move_to_up() b.move_to_down() b.move_to_right()', 
-                // {withCredentials: true})
-                //     .then(response => this.result = response.data)
-                //     .catch(error => console.log(error))
             }
         }
         )
