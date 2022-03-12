@@ -341,7 +341,7 @@
                         // "Content-Type": "application/json",
                         "Authorization": "JWT " + jwt_token
                     };
-                    console.log("v12")
+                    console.log("v13")
                     params.append("code", 'b.move_to_left() b.move_to_up() b.move_to_down() b.move_to_right()')
                     axios.post('https://gazeat.herokuapp.com/api/post_game_status/', params, header = header)
                         .then(response => console.log(response))
