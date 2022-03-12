@@ -337,11 +337,9 @@
                     // POSTPOSTPOST
                     let jwt_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJ1c2VybmFtZSI6ImlkOC0xQGV4YW1wbGUuY29tIiwiZXhwIjoxNjQ3MDQ2OTUxLCJlbWFpbCI6ImlkOC0xQGV4YW1wbGUuY29tIn0.JgPInKsrVeEmxIgCZXRHJTCl1ihKFS3RDt6xJuJzQZY"
                     let params = new URLSearchParams();
-                    let header = "Authorization: JWT " + jwt_token
-                    // let header = {
-                    //     "Content-Type": "application/json",
-                    //     "Authorization": "JWT " + jwt_token
-                    // };
+                    let header = {
+                        "Authorization": "JWT " + jwt_token
+                    };
                     console.log("v16")
                     console.log(header)
                     params.append("code", 'b.move_to_left() b.move_to_up() b.move_to_down() b.move_to_right()')
