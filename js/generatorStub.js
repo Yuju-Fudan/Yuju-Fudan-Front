@@ -319,16 +319,16 @@ Blockly.Python['define_array'] = function(block) {
   return [code, Blockly.Python.ORDER_NONE];
 };
 
-Blockly.Python['substitute_array'] = function(block) {
-<<<<<<< HEAD
-  var value_array = Blockly.Python.valueToCode(block, 'array', Blockly.Python.ORDER_ATOMIC);
-=======
+// Blockly.Python['substitute_array'] = function(block) {
+// <<<<<<< HEAD
+//   var value_array = Blockly.Python.valueToCode(block, 'array', Blockly.Python.ORDER_ATOMIC);
+// =======
 
-  var value_array = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+//   var value_array = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
 
->>>>>>> 5a3b641b0fd885bbbcde75d5db364c1c3b50a4cf
-  var variable_array_name = Blockly.Python.nameDB_.getName(block.getFieldValue('array_name'), Blockly.Variables.NAME_TYPE);
-  var code = `${value_array_name} = b.substitute_array(${value_array}, ${value_array_name})`;
-  return [code, Blockly.Python.ORDER_NONE];
-};
+// >>>>>>> 5a3b641b0fd885bbbcde75d5db364c1c3b50a4cf
+//   var variable_array_name = Blockly.Python.nameDB_.getName(block.getFieldValue('array_name'), Blockly.Variables.NAME_TYPE);
+//   var code = `${value_array_name} = b.substitute_array(${value_array}, ${value_array_name})`;
+//   return [code, Blockly.Python.ORDER_NONE];
+// };
 
