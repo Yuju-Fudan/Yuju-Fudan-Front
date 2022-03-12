@@ -1,297 +1,327 @@
-Blockly.JavaScript['column'] = function(block) {
+Blockly.Python['column'] = function(block) {
   var dropdown_column_list = block.getFieldValue('column_list');
-  // TODO: Assemble JavaScript into code variable.
-  var code = `col=${dropdown_column_listd}`;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  var code = `col=${dropdown_column_list}`;
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
-Blockly.JavaScript['row'] = function(block) {
+Blockly.Python['row'] = function(block) {
   var dropdown_row_list = block.getFieldValue('row_list');
-  // TODO: Assemble JavaScript into code variable.
-  var code = `row=${dropdown_row_listd}`;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  var code = `row=${dropdown_row_list}`;
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
-Blockly.JavaScript['col_and_row'] = function(block) {
+Blockly.Python['col_and_row'] = function(block) {
+  var dropdown_column_list = block.getFieldValue('column_list');
   var dropdown_row_list = block.getFieldValue('row_list');
-  var dropdown_row_list = block.getFieldValue('row_list');
-  // TODO: Assemble JavaScript into code variable.
-  var code = `col=${dropdown_column_listd}, row=${dropdown_row_listd}`;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  var code = `col=${dropdown_column_list}, row=${dropdown_row_list}`;
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
-Blockly.JavaScript['get_value_from_locations'] = function(block) {
-  var value_location = Blockly.JavaScript.valueToCode(block, 'location', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['get_value_from_locations'] = function(block) {
+  var value_location = Blockly.Python.valueToCode(block, 'location', Blockly.Python.ORDER_ATOMIC);
   var code = `b.get_value_from_locations(${value_location})`;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
-Blockly.JavaScript['get_locations_from_value'] = function(block) {
-  var value_value = Blockly.JavaScript.valueToCode(block, 'value', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['get_value_from_column'] = function(block) {
+  var value_column = Blockly.Python.valueToCode(block, 'column', Blockly.Python.ORDER_ATOMIC);
+  var code = `b.get_value_from_column(${value_column})`;
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['get_value_from_row'] = function(block) {
+  var value_row = Blockly.Python.valueToCode(block, 'row', Blockly.Python.ORDER_ATOMIC);
+  var code = `b.get_value_from_row(${value_row})`;
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['get_locations_from_value'] = function(block) {
+  var value_value = Blockly.Python.valueToCode(block, 'value', Blockly.Python.ORDER_ATOMIC);
   var code = `b.get_locations_from_value(${value_value})`;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
-Blockly.JavaScript['get_number_of_value'] = function(block) {
-  var value_value = Blockly.JavaScript.valueToCode(block, 'value', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['get_number_of_value'] = function(block) {
+  var value_value = Blockly.Python.valueToCode(block, 'value', Blockly.Python.ORDER_ATOMIC);
   var code = `b.get_number_of_value(${value_value})`;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
-Blockly.JavaScript['turn'] = function(block) {
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['turn'] = function(block) {
   var code = 'b.get_turn()';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
-Blockly.JavaScript['score'] = function(block) {
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['score'] = function(block) {
   var code = 'b.get_score()';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
-Blockly.JavaScript['max_of_board'] = function(block) {
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['max_of_board'] = function(block) {
   var code = 'b.get_max_of_board()';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
-Blockly.JavaScript['min_of_board'] = function(block) {
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['min_of_board'] = function(block) {
   var code = 'b.get_min_of_board()';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
-Blockly.JavaScript['multiplication'] = function(block) {
-  var value_value1 = Blockly.JavaScript.valueToCode(block, 'value1', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_value2 = Blockly.JavaScript.valueToCode(block, 'value2', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['multiplication'] = function(block) {
+  var value_value1 = Blockly.Python.valueToCode(block, 'value1', Blockly.Python.ORDER_ATOMIC);
+  var value_value2 = Blockly.Python.valueToCode(block, 'value2', Blockly.Python.ORDER_ATOMIC);
   var code = `b.get_multiplication(${value_value1}, ${value_value2})`;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
-Blockly.JavaScript['addition'] = function(block) {
-  var value_value1 = Blockly.JavaScript.valueToCode(block, 'value1', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_value2 = Blockly.JavaScript.valueToCode(block, 'value2', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['addition'] = function(block) {
+  var value_value1 = Blockly.Python.valueToCode(block, 'value1', Blockly.Python.ORDER_ATOMIC);
+  var value_value2 = Blockly.Python.valueToCode(block, 'value2', Blockly.Python.ORDER_ATOMIC);
   var code = `b.get_addition(${value_value1}, ${value_value2})`;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
-Blockly.JavaScript['subtraction'] = function(block) {
-  var value_value1 = Blockly.JavaScript.valueToCode(block, 'value1', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_value2 = Blockly.JavaScript.valueToCode(block, 'value2', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['subtraction'] = function(block) {
+  var value_value1 = Blockly.Python.valueToCode(block, 'value1', Blockly.Python.ORDER_ATOMIC);
+  var value_value2 = Blockly.Python.valueToCode(block, 'value2', Blockly.Python.ORDER_ATOMIC);
   var code = `b.get_subtraction(${value_value1}, ${value_value2})`;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
-Blockly.JavaScript['division'] = function(block) {
-  var value_value1 = Blockly.JavaScript.valueToCode(block, 'value1', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_value2 = Blockly.JavaScript.valueToCode(block, 'value2', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['division'] = function(block) {
+  var value_value1 = Blockly.Python.valueToCode(block, 'value1', Blockly.Python.ORDER_ATOMIC);
+  var value_value2 = Blockly.Python.valueToCode(block, 'value2', Blockly.Python.ORDER_ATOMIC);
   var code = `b.get_division(${value_value1}, ${value_value2})`;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
-Blockly.JavaScript['remainder'] = function(block) {
-  var value_value1 = Blockly.JavaScript.valueToCode(block, 'value1', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_value2 = Blockly.JavaScript.valueToCode(block, 'value2', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['remainder'] = function(block) {
+  var value_value1 = Blockly.Python.valueToCode(block, 'value1', Blockly.Python.ORDER_ATOMIC);
+  var value_value2 = Blockly.Python.valueToCode(block, 'value2', Blockly.Python.ORDER_ATOMIC);
   var code = `b.get_remainder(${value_value1}, ${value_value2})`;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
-Blockly.JavaScript['random_number'] = function(block) {
-  var value_value1 = Blockly.JavaScript.valueToCode(block, 'value1', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_value2 = Blockly.JavaScript.valueToCode(block, 'value2', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['random_number'] = function(block) {
+  var value_value1 = Blockly.Python.valueToCode(block, 'value1', Blockly.Python.ORDER_ATOMIC);
+  var value_value2 = Blockly.Python.valueToCode(block, 'value2', Blockly.Python.ORDER_ATOMIC);
   var code = `b.get_random_number(${value_value1}, ${value_value2})`;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
-Blockly.JavaScript['move_to_left'] = function(block) {
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['move_to_left'] = function(block) {
   var code = 'b.move_to_left()\n';
   return code;
 };
 
-Blockly.JavaScript['move_to_right'] = function(block) {
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['move_to_right'] = function(block) {
   var code = 'b.move_to_right()\n';
   return code;
 };
 
-Blockly.JavaScript['move_to_up'] = function(block) {
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['move_to_up'] = function(block) {
   var code = 'b.move_to_up()\n';
   return code;
 };
 
-Blockly.JavaScript['move_to_down'] = function(block) {
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['move_to_down'] = function(block) {
   var code = 'b.move_to_down()\n';
   return code;
 };
 
-Blockly.JavaScript['move_randomly'] = function(block) {
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['move_randomly'] = function(block) {
   var code = 'b.move_randomly()\n';
   return code;
 };
 
-Blockly.JavaScript['invert_horizontally'] = function(block) {
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['invert_horizontally'] = function(block) {
   var code = 'b.invert_horizontally()\n';
   return code;
 };
 
-Blockly.JavaScript['invert_vertically'] = function(block) {
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['invert_vertically'] = function(block) {
   var code = 'b.invert_vertically()\n';
   return code;
 };
 
-Blockly.JavaScript['invert_diagonally'] = function(block) {
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['invert_diagonally'] = function(block) {
   var code = 'b.invert_diagonally()\n';
   return code;
 };
 
-Blockly.JavaScript['greater'] = function(block) {
-  var value_value1 = Blockly.JavaScript.valueToCode(block, 'value1', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_value2 = Blockly.JavaScript.valueToCode(block, 'value2', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['greater'] = function(block) {
+  var value_value1 = Blockly.Python.valueToCode(block, 'value1', Blockly.Python.ORDER_ATOMIC);
+  var value_value2 = Blockly.Python.valueToCode(block, 'value2', Blockly.Python.ORDER_ATOMIC);
   var code = `b.is_greater(${value_value1}, ${value_value2})`;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
-Blockly.JavaScript['smaller'] = function(block) {
-  var value_value1 = Blockly.JavaScript.valueToCode(block, 'value1', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_value2 = Blockly.JavaScript.valueToCode(block, 'value2', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['smaller'] = function(block) {
+  var value_value1 = Blockly.Python.valueToCode(block, 'value1', Blockly.Python.ORDER_ATOMIC);
+  var value_value2 = Blockly.Python.valueToCode(block, 'value2', Blockly.Python.ORDER_ATOMIC);
   var code = `b.is_smaller(${value_value1}, ${value_value2})`;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
-Blockly.JavaScript['more_than'] = function(block) {
-  var value_value1 = Blockly.JavaScript.valueToCode(block, 'value1', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_value2 = Blockly.JavaScript.valueToCode(block, 'value2', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['more_than'] = function(block) {
+  var value_value1 = Blockly.Python.valueToCode(block, 'value1', Blockly.Python.ORDER_ATOMIC);
+  var value_value2 = Blockly.Python.valueToCode(block, 'value2', Blockly.Python.ORDER_ATOMIC);
   var code = `b.is_more_than(${value_value1}, ${value_value2})`;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
-Blockly.JavaScript['less_than'] = function(block) {
-  var value_value1 = Blockly.JavaScript.valueToCode(block, 'value1', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_value2 = Blockly.JavaScript.valueToCode(block, 'value2', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['less_than'] = function(block) {
+  var value_value1 = Blockly.Python.valueToCode(block, 'value1', Blockly.Python.ORDER_ATOMIC);
+  var value_value2 = Blockly.Python.valueToCode(block, 'value2', Blockly.Python.ORDER_ATOMIC);
   var code = `b.is_less_than(${value_value1}, ${value_value2})`;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
-Blockly.JavaScript['equal'] = function(block) {
-  var value_value1 = Blockly.JavaScript.valueToCode(block, 'value1', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_value2 = Blockly.JavaScript.valueToCode(block, 'value2', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['equal'] = function(block) {
+  var value_value1 = Blockly.Python.valueToCode(block, 'value1', Blockly.Python.ORDER_ATOMIC);
+  var value_value2 = Blockly.Python.valueToCode(block, 'value2', Blockly.Python.ORDER_ATOMIC);
   var code = `b.is_equal(${value_value1}, ${value_value2})`;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
-Blockly.JavaScript['and'] = function(block) {
-  var value_value1 = Blockly.JavaScript.valueToCode(block, 'value1', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_value2 = Blockly.JavaScript.valueToCode(block, 'value2', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['and'] = function(block) {
+  var value_value1 = Blockly.Python.valueToCode(block, 'value1', Blockly.Python.ORDER_ATOMIC);
+  var value_value2 = Blockly.Python.valueToCode(block, 'value2', Blockly.Python.ORDER_ATOMIC);
   var code = `b.is_and(${value_value1}, ${value_value2})`;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
-Blockly.JavaScript['or'] = function(block) {
-  var value_value1 = Blockly.JavaScript.valueToCode(block, 'value1', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_value2 = Blockly.JavaScript.valueToCode(block, 'value2', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['or'] = function(block) {
+  var value_value1 = Blockly.Python.valueToCode(block, 'value1', Blockly.Python.ORDER_ATOMIC);
+  var value_value2 = Blockly.Python.valueToCode(block, 'value2', Blockly.Python.ORDER_ATOMIC);
   var code = `b.is_or(${value_value1}, ${value_value2})`;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
-Blockly.JavaScript['not'] = function(block) {
-  var value_value = Blockly.JavaScript.valueToCode(block, 'value', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['not'] = function(block) {
+  var value_value = Blockly.Python.valueToCode(block, 'value', Blockly.Python.ORDER_ATOMIC);
   var code = `b.is_not(${value_value})`;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
-Blockly.JavaScript['if'] = function(block) {
-  var value_condition = Blockly.JavaScript.valueToCode(block, 'condition', Blockly.JavaScript.ORDER_ATOMIC);
-  var statements_true_processing = Blockly.JavaScript.statementToCode(block, 'true_processing');
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['if'] = function(block) {
+  var value_condition = Blockly.Python.valueToCode(block, 'condition', Blockly.Python.ORDER_ATOMIC);
+  var statements_true_processing = Blockly.Python.statementToCode(block, 'true_processing');
   var code = `b.control_if(${value_condition}, ${statements_true_processing}`;
   return code;
 };
 
-Blockly.JavaScript['if_else'] = function(block) {
-  var value_condition = Blockly.JavaScript.valueToCode(block, 'condition', Blockly.JavaScript.ORDER_ATOMIC);
-  var statements_true_processing = Blockly.JavaScript.statementToCode(block, 'true_processing');
-  var statements_false_processing = Blockly.JavaScript.statementToCode(block, 'false_processing');
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['if_else'] = function(block) {
+  var value_condition = Blockly.Python.valueToCode(block, 'condition', Blockly.Python.ORDER_ATOMIC);
+  var statements_true_processing = Blockly.Python.statementToCode(block, 'true_processing');
+  var statements_false_processing = Blockly.Python.statementToCode(block, 'false_processing');
   var code = `b.control_if_else(${value_condition}, ${statements_true_processing}, ${statements_false_processing}`;
   return code;
 };
 
-Blockly.JavaScript['while_true'] = function(block) {
-  var statements_roop_processing = Blockly.JavaScript.statementToCode(block, 'roop_processing');
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['while_true'] = function(block) {
+  var statements_roop_processing = Blockly.Python.statementToCode(block, 'roop_processing');
   var code = `b.control_while_true(${statements_true_processing})`;
   return code;
 };
 
-Blockly.JavaScript['while'] = function(block) {
-  var value_condition = Blockly.JavaScript.valueToCode(block, 'condition', Blockly.JavaScript.ORDER_ATOMIC);
-  var statements_roop_processing = Blockly.JavaScript.statementToCode(block, 'roop_processing');
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['while'] = function(block) {
+  var value_condition = Blockly.Python.valueToCode(block, 'condition', Blockly.Python.ORDER_ATOMIC);
+  var statements_roop_processing = Blockly.Python.statementToCode(block, 'roop_processing');
   var code = `b.control_while(${value_condition}, ${statements_true_processing})`;
   return code;
 };
 
-Blockly.JavaScript['for'] = function(block) {
-  var value_values = Blockly.JavaScript.valueToCode(block, 'values', Blockly.JavaScript.ORDER_ATOMIC);
-  var statements_roop_processing = Blockly.JavaScript.statementToCode(block, 'roop_processing');
-  // TODO: Assemble JavaScript into code variable.
+Blockly.Python['for'] = function(block) {
+  var value_values = Blockly.Python.valueToCode(block, 'values', Blockly.Python.ORDER_ATOMIC);
+  var statements_roop_processing = Blockly.Python.statementToCode(block, 'roop_processing');
   var code = `b.control_for(${value_values}, ${statements_true_processing})`;
   return code;
 };
 
-Blockly.JavaScript['value'] = function(block) {
+Blockly.Python['value'] = function(block) {
   var number_name = block.getFieldValue('NAME');
-  // TODO: Assemble JavaScript into code variable.
   var code = `b.get_value(${number_name})`;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['len_of_array'] = function(block) {
+  var value_array = Blockly.Python.valueToCode(block, 'array', Blockly.Python.ORDER_ATOMIC);
+  var code = `b.get_len_of_array(${value_array})`;
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['value_of_array'] = function(block) {
+  var value_array = Blockly.Python.valueToCode(block, 'array', Blockly.Python.ORDER_ATOMIC);
+  var value_value = Blockly.Python.valueToCode(block, 'value', Blockly.Python.ORDER_ATOMIC);
+  var code = `b.get_value_of_array(${value_array}, ${value_vallue})`;
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['max_value_of_array'] = function(block) {
+  var value_array = Blockly.Python.valueToCode(block, 'array', Blockly.Python.ORDER_ATOMIC);
+  var code = `b.get_max_of_array(${value_array})`;
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['min_value_of_array'] = function(block) {
+  var value_array = Blockly.Python.valueToCode(block, 'array', Blockly.Python.ORDER_ATOMIC);
+  var code = `b.get_min_of_array(${value_array})`;
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['included_in_the_array'] = function(block) {
+  var value_array = Blockly.Python.valueToCode(block, 'array', Blockly.Python.ORDER_ATOMIC);
+  var value_value = Blockly.Python.valueToCode(block, 'value', Blockly.Python.ORDER_ATOMIC);
+  var code = `b.is_included_in_array(${value_array}, ${value_value})`;
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['insert_into_an_array'] = function(block) {
+  var variable_array_name = Blockly.Python.nameDB_.getName(block.getFieldValue('array_name'), Blockly.Variables.NAME_TYPE);
+  var value_value1 = Blockly.Python.valueToCode(block, 'value1', Blockly.Python.ORDER_ATOMIC);
+  var value_value2 = Blockly.Python.valueToCode(block, 'value2', Blockly.Python.ORDER_ATOMIC);
+  var code = `${value_array_name} = b.insert_into_array(${value_array_name}, ${value_value1}, ${value_value2})`;
+  return code;
+};
+
+Blockly.Python['remove_from_array'] = function(block) {
+  var variable_array_name = Blockly.Python.nameDB_.getName(block.getFieldValue('array_name'), Blockly.Variables.NAME_TYPE);
+  var value_value1 = Blockly.Python.valueToCode(block, 'value1', Blockly.Python.ORDER_ATOMIC);
+  var code = `${value_array_name} = b.remove_from_array(${value_array_name}, ${value_value})`;
+  return code;
+};
+
+Blockly.Python['update_value_of_array'] = function(block) {
+  var variable_array_name = Blockly.Python.nameDB_.getName(block.getFieldValue('array_name'), Blockly.Variables.NAME_TYPE);
+  var value_value1 = Blockly.Python.valueToCode(block, 'value1', Blockly.Python.ORDER_ATOMIC);
+  var value_value2 = Blockly.Python.valueToCode(block, 'value2', Blockly.Python.ORDER_ATOMIC);
+  var code = `${value_array_name} = b.update_value_of_array(${value_array_name}, ${value_value1}, ${value_value2})`;
+  return code;
+};
+
+Blockly.Python['delete_array'] = function(block) {
+  var variable_array_name = Blockly.Python.nameDB_.getName(block.getFieldValue('array_name'), Blockly.Variables.NAME_TYPE);
+  var code = `${value_array_name} = b.delete_array(${value_array_name})`;
+  return code;
+};
+
+Blockly.Python['append_to_array'] = function(block) {
+  var variable_array_name = Blockly.Python.nameDB_.getName(block.getFieldValue('array_name'), Blockly.Variables.NAME_TYPE);
+  var value_value = Blockly.Python.valueToCode(block, 'value1', Blockly.Python.ORDER_ATOMIC);
+  var code = `${value_array_name} = b.append_to_array(${value_array_name}, ${value_value})`;
+  return code;
+};
+
+Blockly.Python['define_array'] = function(block) {
+  var variable_array_name = Blockly.Python.nameDB_.getName(block.getFieldValue('array_name'), Blockly.Variables.NAME_TYPE);
+  var code = `b.define_array(${value_array_name})`;
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['substitute_array'] = function(block) {
+  var value_array = Blockly.Python.valueToCode(block, 'array', Blockly.Python.ORDER_ATOMIC);
+  var variable_array_name = Blockly.Python.nameDB_.getName(block.getFieldValue('array_name'), Blockly.Variables.NAME_TYPE);
+  var code = `${value_array_name} = b.substitute_array(${value_array}, ${value_array_name})`;
+  return [code, Blockly.Python.ORDER_NONE];
 };
