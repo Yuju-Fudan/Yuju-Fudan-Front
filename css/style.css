@@ -194,7 +194,7 @@ a{
 }
 .nums2{
 
-    transition: all 1s;
+    transition: all 0.2s;
 }
 :hover.nums2{
     background-color: rgb(196, 255, 203);
@@ -202,33 +202,43 @@ a{
 }
 .nums4{
     background-color: rgb(250, 196, 255);
+    transition: all 0.2s;
 }
 .nums8{
     background-color: rgb(255, 231, 196);
+    transition: all 0.2s;
 }
 .nums16{
     background-color: rgb(196, 208, 255);
+    transition: all 0.2s;
 }
 .nums32{
     background-color: rgb(228, 196, 255);
+    transition: all 0.2s;
 }
 .nums64{
     background-color: rgb(196, 248, 255);
+    transition: all 0.2s;
 }
 .nums128{
     background-color: rgb(235, 196, 255);
+    transition: all 0.2s;
 }
 .nums256{
     background-color: rgb(255, 196, 196);
+    transition: all 0.2s;
 }
 .nums512{
     background-color: rgb(196, 227, 255);
+    transition: all 0.2s;
 }
 .nums1024{
     background-color: rgb(221, 196, 255);
+    transition: all 0.2s;
 }
 .nums2048{
     background-color: rgb(226, 98, 89);
+    transition: all 0.2s;
 }
 .nums0{
     background: none;
