@@ -39,9 +39,13 @@ Blockly.Blocks['col_and_row'] = {
 Blockly.Blocks['get_value_from_locations'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("位置(列+行)が");
-    this.appendValueInput("location")
-        .setCheck("location");
+        .appendField("列が");
+    this.appendValueInput("column")
+        .setCheck("column");
+    this.appendDummyInput()
+        .appendField("、行が");
+    this.appendValueInput("row")
+        .setCheck("row");
     this.appendDummyInput()
         .appendField("の値");
     this.setOutput(true, "Number");
@@ -54,7 +58,7 @@ Blockly.Blocks['get_value_from_locations'] = {
 Blockly.Blocks['get_value_from_column'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("位置(列)が");
+        .appendField("列が");
     this.appendValueInput("column")
         .setCheck("column");
     this.appendDummyInput()
@@ -69,7 +73,7 @@ Blockly.Blocks['get_value_from_column'] = {
 Blockly.Blocks['get_value_from_row'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("位置(行)が");
+        .appendField("行が");
     this.appendValueInput("row")
         .setCheck("row");
     this.appendDummyInput()

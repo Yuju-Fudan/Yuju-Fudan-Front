@@ -1,6 +1,6 @@
 Blockly.Python['column'] = function(block) {
   var dropdown_column_list = block.getFieldValue('column_list');
-  var code = `col="${dropdown_column_list}"`;
+  var code = `col='${dropdown_column_list}'`;
   return [code, Blockly.Python.ORDER_NONE];
 };
 
@@ -13,25 +13,27 @@ Blockly.Python['row'] = function(block) {
 Blockly.Python['col_and_row'] = function(block) {
   var dropdown_column_list = block.getFieldValue('column_list');
   var dropdown_row_list = block.getFieldValue('row_list');
-  var code = `col="${dropdown_column_list}", row=${dropdown_row_list}`;
+  var code = `col='${dropdown_column_list}', row=${dropdown_row_list}`;
   return [code, Blockly.Python.ORDER_NONE];
 };
 
 Blockly.Python['get_value_from_locations'] = function(block) {
-  var value_location = Blockly.Python.valueToCode(block, 'location', Blockly.Python.ORDER_ATOMIC);
-  var code = `b.get_value_from_locations(${value_location})`;
+  // var value_location = Blockly.Python.valueToCode(lock, 'location', Blockly.Python.ORDER_ATOMIC);
+  var value_column = Blockly.Python.valueToCode(block, 'column', Blockly.Python.ORDER_ATOMIC);
+  var value_row = Blockly.Python.valueToCode(block, 'row', Blockly.Python.ORDER_ATOMIC);
+  var code = `b.get_value_from_locations(${value_column.slice(1,-1)}, ${value_row.slice(1,-1)})`;
   return [code, Blockly.Python.ORDER_NONE];
 };
 
 Blockly.Python['get_value_from_column'] = function(block) {
   var value_column = Blockly.Python.valueToCode(block, 'column', Blockly.Python.ORDER_ATOMIC);
-  var code = `b.get_value_from_column(${value_column})`;
+  var code = `b.get_value_from_column${value_column}`;
   return [code, Blockly.Python.ORDER_NONE];
 };
 
 Blockly.Python['get_value_from_row'] = function(block) {
   var value_row = Blockly.Python.valueToCode(block, 'row', Blockly.Python.ORDER_ATOMIC);
-  var code = `b.get_value_from_row(${value_row})`;
+  var code = `b.get_value_from_row${value_row}`;
   return [code, Blockly.Python.ORDER_NONE];
 };
 
@@ -110,42 +112,42 @@ Blockly.Python['random_number'] = function(block) {
 };
 
 Blockly.Python['move_to_left'] = function(block) {
-  var code = 'b.move_to_left()\n';
+  var code = 'b.move_to_left();';
   return code;
 };
 
 Blockly.Python['move_to_right'] = function(block) {
-  var code = 'b.move_to_right()\n';
+  var code = 'b.move_to_right();';
   return code;
 };
 
 Blockly.Python['move_to_up'] = function(block) {
-  var code = 'b.move_to_up()\n';
+  var code = 'b.move_to_up();';
   return code;
 };
 
 Blockly.Python['move_to_down'] = function(block) {
-  var code = 'b.move_to_down()\n';
+  var code = 'b.move_to_down();';
   return code;
 };
 
 Blockly.Python['move_randomly'] = function(block) {
-  var code = 'b.move_randomly()\n';
+  var code = 'b.move_randomly();';
   return code;
 };
 
 Blockly.Python['invert_horizontally'] = function(block) {
-  var code = 'b.invert_horizontally()\n';
+  var code = 'b.invert_horizontally();';
   return code;
 };
 
 Blockly.Python['invert_vertically'] = function(block) {
-  var code = 'b.invert_vertically()\n';
+  var code = 'b.invert_vertically();';
   return code;
 };
 
 Blockly.Python['invert_diagonally'] = function(block) {
-  var code = 'b.invert_diagonally()\n';
+  var code = 'b.invert_diagonally();';
   return code;
 };
 
@@ -207,7 +209,8 @@ Blockly.Python['not'] = function(block) {
 Blockly.Python['if'] = function(block) {
   var value_condition = Blockly.Python.valueToCode(block, 'condition', Blockly.Python.ORDER_ATOMIC);
   var statements_true_processing = Blockly.Python.statementToCode(block, 'true_processing');
-  var code = `b.control_if(${value_condition}, ${statements_true_processing}`;
+  var code = `if ${value_condition}:${statements_true_processing.slice(0, -1)};`;
+  // var code = `if ${value_condition}:;${statements_true_processing};`;
   return code;
 };
 
@@ -215,27 +218,28 @@ Blockly.Python['if_else'] = function(block) {
   var value_condition = Blockly.Python.valueToCode(block, 'condition', Blockly.Python.ORDER_ATOMIC);
   var statements_true_processing = Blockly.Python.statementToCode(block, 'true_processing');
   var statements_false_processing = Blockly.Python.statementToCode(block, 'false_processing');
-  var code = `b.control_if_else(${value_condition}, ${statements_true_processing}, ${statements_false_processing}`;
+  var code = `${statements_true_processing.slice(0, -1)} if ${value_condition} else ${statements_false_processing}`;
+  // var code = `b.control_if_else(${value_condition}, ${statements_true_processing}, ${statements_false_processing})`;
   return code;
 };
 
 Blockly.Python['while_true'] = function(block) {
   var statements_roop_processing = Blockly.Python.statementToCode(block, 'roop_processing');
-  var code = `b.control_while_true(${statements_true_processing})`;
+  var code = `b.control_while_true(${statements_roop_processing})`;
   return code;
 };
 
 Blockly.Python['while'] = function(block) {
   var value_condition = Blockly.Python.valueToCode(block, 'condition', Blockly.Python.ORDER_ATOMIC);
   var statements_roop_processing = Blockly.Python.statementToCode(block, 'roop_processing');
-  var code = `b.control_while(${value_condition}, ${statements_true_processing})`;
+  var code = `b.control_while(${value_condition}, ${statements_roop_processing})`;
   return code;
 };
 
 Blockly.Python['for'] = function(block) {
   var value_values = Blockly.Python.valueToCode(block, 'values', Blockly.Python.ORDER_ATOMIC);
   var statements_roop_processing = Blockly.Python.statementToCode(block, 'roop_processing');
-  var code = `b.control_for(${value_values}, ${statements_true_processing})`;
+  var code = `b.control_for(${value_values}, ${statements_roop_processing})`;
   return code;
 };
 
@@ -318,17 +322,4 @@ Blockly.Python['define_array'] = function(block) {
   var code = `b.define_array(${value_array_name})`;
   return [code, Blockly.Python.ORDER_NONE];
 };
-
-// Blockly.Python['substitute_array'] = function(block) {
-// <<<<<<< HEAD
-//   var value_array = Blockly.Python.valueToCode(block, 'array', Blockly.Python.ORDER_ATOMIC);
-// =======
-
-//   var value_array = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
-
-// >>>>>>> 5a3b641b0fd885bbbcde75d5db364c1c3b50a4cf
-//   var variable_array_name = Blockly.Python.nameDB_.getName(block.getFieldValue('array_name'), Blockly.Variables.NAME_TYPE);
-//   var code = `${value_array_name} = b.substitute_array(${value_array}, ${value_array_name})`;
-//   return [code, Blockly.Python.ORDER_NONE];
-// };
 
