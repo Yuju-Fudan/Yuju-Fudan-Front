@@ -33,36 +33,20 @@
 <body>
     <nav class="navbar navbar-expand-lg ">
         <a class="navbar-brand" href="#">
-            <h1>タイトルだぜ！</h1>
-            <!-- <img src="img/logos.png" width="120px" alt=""> -->
+            
+           <img src="img/logos.png" width="120px" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-          </ul>
+  
         </div>
       </nav>
     <div class="container">
         
         <div class="row">
-            <div style="margin-top: 40px;" class="col-md-12 center">
-                <h1>Score hogehogept</h1>
-
-            </div>
+  
         </div>
         <div class="row" style="margin-top:80px">
             <div class="col-md-8">
@@ -153,6 +137,10 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card play_area play">
+                            <div style="margin-top: 10px;" class="col-md-12 center">
+                                <h3>Score HOGEpt</h3>
+                
+                            </div>
                             <div class="">
                                 <div id="send_code">
                                 <div class="container-fluid center">
@@ -160,98 +148,114 @@
                                         <div class="col-md-12">
                                             <div class="row" style="width: 256px;">
                                                 <div class="col-3">
-                                                    <div id="a1" class="box nums">
-                                                        <p class="nums">{{a1}}</p>
+                                                    <div id="a1" class="box nums0">
+                                                        <p class="nums nums0" v-if="a1===0"></p>
+                                                        <p class="nums nums0" v-else>{{a1}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="b1" class="box nums">
-                                                        <p class="nums">{{b1}}</p>
+                                                    <div id="b1" class="box nums0">
+                                                        <p class="nums nums0" v-if="b1===0"></p>
+                                                        <p class="nums nums0" v-else>{{b1}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="c1" class="box nums">
-                                                        <p class="nums">{{c1}}</p>
+                                                    <div id="c1" class="box nums0">
+                                                        <p class="nums nums0" v-if="c1===0"></p>
+                                                        <p class="nums nums0" v-else>{{c1}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="d1" class="box nums">
-                                                        <p class="nums">{{d1}}</p>
+                                                    <div id="d1" class="box nums0">
+                                                        <p class="nums nums0" v-if="d1===0"></p>
+                                                        <p class="nums nums0" v-else>{{d1}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="a2" class="box nums">
-                                                        <p class="nums">{{a2}}</p>
+                                                    <div id="a2" class="box nums0">
+                                                        <p class="nums nums0" v-if="a2===0"></p>
+                                                        <p class="nums nums0" v-else>{{a2}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="b2" class="box nums">
-                                                        <p class="nums">{{b2}}</p>
+                                                    <div id="b2" class="box nums0">
+                                                        <p class="nums nums0" v-if="b2===0"></p>
+                                                        <p class="nums nums0" v-else>{{b2}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="c2" class="box nums">
-                                                        <p class="nums">{{c2}}</p>
+                                                    <div id="c2" class="box nums0">
+                                                        <p class="nums nums0" v-if="c2===0"></p>
+                                                        <p class="nums nums0" v-else>{{c2}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="d2" class="box nums">
-                                                        <p class="nums">{{d2}}</p>
+                                                    <div id="d2" class="box nums0">
+                                                        <p class="nums nums0" v-if="d2===0"></p>
+                                                        <p class="nums nums0" v-else>{{d2}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="a3" class="box nums">
-                                                        <p class="nums">{{a3}}</p>
+                                                    <div id="a3" class="box nums0">
+                                                        <p class="nums nums0" v-if="a3===0"></p>
+                                                        <p class="nums nums0" v-else>{{a3}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="b3" class="box nums">
-                                                        <p class="nums">{{b3}}</p>
+                                                    <div id="b3" class="box nums0">
+                                                        <p class="nums nums0" v-if="b3===0"></p>
+                                                        <p class="nums nums0" v-else>{{b3}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="c3" class="box nums">
-                                                        <p class="nums">{{c3}}</p>
+                                                    <div id="c3" class="box nums0">
+                                                        <p class="nums nums0" v-if="c3===0"></p>
+                                                        <p class="nums nums0" v-else>{{c3}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="d3" class="box nums">
-                                                        <p class="nums">{{d3}}</p>
+                                                    <div id="d3" class="box nums0">
+                                                        <p class="nums nums0" v-if="d3===0"></p>
+                                                        <p class="nums nums0" v-else>{{d3}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="a4" class="box nums">
-                                                        <p class="nums">{{a4}}</p>
+                                                    <div id="a4" class="box nums0">
+                                                        <p class="nums nums0" v-if="a4===0"></p>
+                                                        <p class="nums nums0" v-else>{{a4}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="b4" class="box nums">
-                                                        <p class="nums">{{b4}}</p>
+                                                    <div id="b4" class="box nums0">
+                                                        <p class="nums nums0" v-if="b4===0"></p>
+                                                        <p class="nums nums0" v-else>{{b4}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="c4" class="box nums">
-                                                        <p class="nums">{{c4}}</p>
+                                                    <div id="c4" class="box nums0">
+                                                        <p class="nums nums0" v-if="c4===0"></p>
+                                                        <p class="nums nums0" v-else>{{c4}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="d4" class="box nums">
-                                                        <p class="nums">{{d4}}</p>
+                                                    <div id="d4" class="box nums0">
+                                                        <p class="nums nums0" v-if="d4===0"></p>
+                                                        <p class="nums nums0" v-else>{{d4}}</p>
                                                     </div>
 
                                                 </div>
