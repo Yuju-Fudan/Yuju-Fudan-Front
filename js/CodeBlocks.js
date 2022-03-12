@@ -60,7 +60,7 @@ Blockly.Blocks['get_locations_from_value'] = {
     this.appendDummyInput()
         .appendField("の座標");
     this.setOutput(true, "location");
-    this.setColour(180);
+    this.setColour(0);
  this.setTooltip("");
  this.setHelpUrl("");
   }
