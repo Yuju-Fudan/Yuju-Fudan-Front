@@ -338,11 +338,11 @@
                     let jwt_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJ1c2VybmFtZSI6ImlkOC0xQGV4YW1wbGUuY29tIiwiZXhwIjoxNjQ3MDQ2OTUxLCJlbWFpbCI6ImlkOC0xQGV4YW1wbGUuY29tIn0.JgPInKsrVeEmxIgCZXRHJTCl1ihKFS3RDt6xJuJzQZY'
                     var params = new URLSearchParams();
                     var header = {
-                        'Authorization': 'JWT ' + btoa(jwt_token)
+                        'Authorization': 'JWT ' + atob(jwt_token)
                         // "Content-Type": "application/json",
                         // "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJ1c2VybmFtZSI6ImlkOC0xQGV4YW1wbGUuY29tIiwiZXhwIjoxNjQ3MDQ2OTUxLCJlbWFpbCI6ImlkOC0xQGV4YW1wbGUuY29tIn0.JgPInKsrVeEmxIgCZXRHJTCl1ihKFS3RDt6xJuJzQZY"
                     };
-                    console.log("v27")
+                    console.log("v28")
                     console.log(header)
                     params.append("code", 'b.move_to_left() b.move_to_up() b.move_to_down() b.move_to_right()')
                     axios.post('https://gazeat.herokuapp.com/api/post_game_status/', params, header = header)
