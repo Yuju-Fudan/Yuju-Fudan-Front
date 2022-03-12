@@ -1,783 +1,783 @@
 Blockly.Blocks['column'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["1","a"], ["2","b"], ["3","c"], ["4","d"]]), "column_list")
-        .appendField("列目");
+      .appendField(new Blockly.FieldDropdown([["1", "a"], ["2", "b"], ["3", "c"], ["4", "d"]]), "column_list")
+      .appendField("列目");
     this.setOutput(true, "column");
     this.setColour(0);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['row'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["4","4"]]), "row_list")
-        .appendField("行目");
+      .appendField(new Blockly.FieldDropdown([["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"]]), "row_list")
+      .appendField("行目");
     this.setOutput(true, "row");
     this.setColour(0);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['col_and_row'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["1","a"], ["2","b"], ["3","c"], ["4","d"]]), "column_list")
-        .appendField("列目の")
-        .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["4","4"]]), "row_list")
-        .appendField("行目");
+      .appendField(new Blockly.FieldDropdown([["1", "a"], ["2", "b"], ["3", "c"], ["4", "d"]]), "column_list")
+      .appendField("列目の")
+      .appendField(new Blockly.FieldDropdown([["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"]]), "row_list")
+      .appendField("行目");
     this.setOutput(true, "location");
     this.setColour(0);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['get_value_from_locations'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("列が");
+      .appendField("列が");
     this.appendValueInput("column")
-        .setCheck("column");
+      .setCheck("column");
     this.appendDummyInput()
-        .appendField("、行が");
+      .appendField("、行が");
     this.appendValueInput("row")
-        .setCheck("row");
+      .setCheck("row");
     this.appendDummyInput()
-        .appendField("の値");
+      .appendField("の値");
     this.setOutput(true, "Number");
     this.setColour(180);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['get_value_from_column'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("列が");
+      .appendField("列が");
     this.appendValueInput("column")
-        .setCheck("column");
+      .setCheck("column");
     this.appendDummyInput()
-        .appendField("の値（配列）");
+      .appendField("の値（配列）");
     this.setOutput(true, "Array");
     this.setColour(225);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['get_value_from_row'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("行が");
+      .appendField("行が");
     this.appendValueInput("row")
-        .setCheck("row");
+      .setCheck("row");
     this.appendDummyInput()
-        .appendField("の値（配列）");
+      .appendField("の値（配列）");
     this.setOutput(true, "Array");
     this.setColour(225);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['get_locations_from_value'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("値が");
+      .appendField("値が");
     this.appendValueInput("value")
-        .setCheck("Number");
+      .setCheck("Number");
     this.appendDummyInput()
-        .appendField("の座標（配列）");
+      .appendField("の座標（配列）");
     this.setOutput(true, "Array");
     this.setColour(225);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['get_number_of_value'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("値が");
+      .appendField("値が");
     this.appendValueInput("value")
-        .setCheck("Number");
+      .setCheck("Number");
     this.appendDummyInput()
-        .appendField("の個数");
+      .appendField("の個数");
     this.setOutput(true, "Number");
     this.setColour(180);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['turn'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("ターン数");
+      .appendField("ターン数");
     this.setOutput(true, "Number");
     this.setColour(180);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['score'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("スコア");
+      .appendField("スコア");
     this.setOutput(true, "Number");
     this.setColour(180);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['max_of_board'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("盤面の最大値");
+      .appendField("盤面の最大値");
     this.setOutput(true, "Number");
     this.setColour(180);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['min_of_board'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("盤面の最小値");
+      .appendField("盤面の最小値");
     this.setOutput(true, "Number");
     this.setColour(180);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['multiplication'] = {
-  init: function() {
+  init: function () {
     this.appendValueInput("value1")
-        .setCheck("Number");
+      .setCheck("Number");
     this.appendDummyInput()
-        .appendField("×");
+      .appendField("×");
     this.appendValueInput("value2")
-        .setCheck("Number");
+      .setCheck("Number");
     this.setOutput(true, "Number");
     this.setColour(180);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['addition'] = {
-  init: function() {
+  init: function () {
     this.appendValueInput("value1")
-        .setCheck("Number");
+      .setCheck("Number");
     this.appendDummyInput()
-        .appendField("+");
+      .appendField("+");
     this.appendValueInput("value2")
-        .setCheck("Number");
+      .setCheck("Number");
     this.setOutput(true, "Number");
     this.setColour(180);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['subtraction'] = {
-  init: function() {
+  init: function () {
     this.appendValueInput("value1")
-        .setCheck("Number");
+      .setCheck("Number");
     this.appendDummyInput()
-        .appendField("−");
+      .appendField("−");
     this.appendValueInput("value2")
-        .setCheck("Number");
+      .setCheck("Number");
     this.setOutput(true, "Number");
     this.setColour(180);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['division'] = {
-  init: function() {
+  init: function () {
     this.appendValueInput("value1")
-        .setCheck("Number");
+      .setCheck("Number");
     this.appendDummyInput()
-        .appendField("÷");
+      .appendField("÷");
     this.appendValueInput("value2")
-        .setCheck("Number");
+      .setCheck("Number");
     this.setOutput(true, "Number");
     this.setColour(180);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['remainder'] = {
-  init: function() {
+  init: function () {
     this.appendValueInput("value1")
-        .setCheck("Number");
+      .setCheck("Number");
     this.appendDummyInput()
-        .appendField("÷");
+      .appendField("÷");
     this.appendValueInput("value2")
-        .setCheck("Number");
+      .setCheck("Number");
     this.appendDummyInput()
-        .appendField("の余り");
+      .appendField("の余り");
     this.setOutput(true, "Number");
     this.setColour(180);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['random_number'] = {
-  init: function() {
+  init: function () {
     this.appendValueInput("value1")
-        .setCheck("Number");
+      .setCheck("Number");
     this.appendDummyInput()
-        .appendField("〜");
+      .appendField("〜");
     this.appendValueInput("value2")
-        .setCheck("Number");
+      .setCheck("Number");
     this.appendDummyInput()
-        .appendField("内の乱数");
+      .appendField("内の乱数");
     this.setOutput(true, "Number");
     this.setColour(180);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['move_to_left'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("左へスライドする");
+      .appendField("左へスライドする");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(90);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['move_to_right'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("右へスライドする");
+      .appendField("右へスライドする");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(90);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['move_to_up'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("上へスライドする");
+      .appendField("上へスライドする");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(90);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['move_to_down'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("下へスライドする");
+      .appendField("下へスライドする");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(90);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['move_randomly'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("ランダムな方向へスライドする");
+      .appendField("ランダムな方向へスライドする");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(90);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['invert_horizontally'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("左右に反転する");
+      .appendField("左右に反転する");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(90);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['invert_vertically'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("上下に反転する");
+      .appendField("上下に反転する");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(90);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['invert_diagonally'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("斜めに反転する");
+      .appendField("斜めに反転する");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(90);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['greater'] = {
-  init: function() {
+  init: function () {
     this.appendValueInput("value1")
-        .setCheck("Number");
+      .setCheck("Number");
     this.appendDummyInput()
-        .appendField("＞");
+      .appendField("＞");
     this.appendValueInput("value2")
-        .setCheck("Number");
+      .setCheck("Number");
     this.setOutput(true, null);
     this.setColour(45);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['smaller'] = {
-  init: function() {
+  init: function () {
     this.appendValueInput("value1")
-        .setCheck("Number");
+      .setCheck("Number");
     this.appendDummyInput()
-        .appendField("＜");
+      .appendField("＜");
     this.appendValueInput("value2")
-        .setCheck("Number");
+      .setCheck("Number");
     this.setOutput(true, null);
     this.setColour(45);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['more_than'] = {
-  init: function() {
+  init: function () {
     this.appendValueInput("value1")
-        .setCheck("Number");
+      .setCheck("Number");
     this.appendDummyInput()
-        .appendField("≧");
+      .appendField("≧");
     this.appendValueInput("value2")
-        .setCheck("Number");
+      .setCheck("Number");
     this.setOutput(true, null);
     this.setColour(45);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['less_than'] = {
-  init: function() {
+  init: function () {
     this.appendValueInput("value1")
-        .setCheck("Number");
+      .setCheck("Number");
     this.appendDummyInput()
-        .appendField("≦");
+      .appendField("≦");
     this.appendValueInput("value2")
-        .setCheck("Number");
+      .setCheck("Number");
     this.setOutput(true, null);
     this.setColour(45);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['equal'] = {
-  init: function() {
+  init: function () {
     this.appendValueInput("value1")
-        .setCheck("Number");
+      .setCheck("Number");
     this.appendDummyInput()
-        .appendField("と");
+      .appendField("と");
     this.appendValueInput("value2")
-        .setCheck("Number");
+      .setCheck("Number");
     this.appendDummyInput()
-        .appendField("が等しい");
+      .appendField("が等しい");
     this.setOutput(true, null);
     this.setColour(45);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['and'] = {
-  init: function() {
+  init: function () {
     this.appendValueInput("value1")
-        .setCheck("Number");
+      .setCheck("Number");
     this.appendDummyInput()
-        .appendField("かつ");
+      .appendField("かつ");
     this.appendValueInput("value2")
-        .setCheck("Number");
+      .setCheck("Number");
     this.setOutput(true, null);
     this.setColour(45);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['or'] = {
-  init: function() {
+  init: function () {
     this.appendValueInput("value1")
-        .setCheck("Number");
+      .setCheck("Number");
     this.appendDummyInput()
-        .appendField("または");
+      .appendField("または");
     this.appendValueInput("value2")
-        .setCheck("Number");
+      .setCheck("Number");
     this.setOutput(true, null);
     this.setColour(45);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['not'] = {
-  init: function() {
+  init: function () {
     this.appendValueInput("value")
-        .setCheck("Number");
+      .setCheck("Number");
     this.appendDummyInput()
-        .appendField("ではない");
+      .appendField("ではない");
     this.setOutput(true, null);
     this.setColour(45);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['if'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("もし");
+      .appendField("もし");
     this.appendValueInput("condition")
-        .setCheck("Boolean");
+      .setCheck("Boolean");
     this.appendDummyInput()
-        .appendField("ならば");
+      .appendField("ならば");
     this.appendStatementInput("true_processing")
-        .setCheck(null);
+      .setCheck(null);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(270);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['if_else'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("もし");
+      .appendField("もし");
     this.appendValueInput("condition")
-        .setCheck("Boolean");
+      .setCheck("Boolean");
     this.appendDummyInput()
-        .appendField("ならば");
+      .appendField("ならば");
     this.appendStatementInput("true_processing")
-        .setCheck(null);
+      .setCheck(null);
     this.appendDummyInput()
-        .appendField("でなければ");
+      .appendField("でなければ");
     this.appendStatementInput("false_processing")
-        .setCheck(null);
+      .setCheck(null);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(270);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['while_true'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("ずっと繰り返す");
+      .appendField("ずっと繰り返す");
     this.appendStatementInput("roop_processing")
-        .setCheck(null);
+      .setCheck(null);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(270);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['while'] = {
-  init: function() {
+  init: function () {
     this.appendValueInput("condition")
-        .setCheck("Boolean");
+      .setCheck("Boolean");
     this.appendDummyInput()
-        .appendField("の間、ずっと繰り返す");
+      .appendField("の間、ずっと繰り返す");
     this.appendStatementInput("roop_processing")
-        .setCheck(null);
+      .setCheck(null);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(270);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['for'] = {
-  init: function() {
+  init: function () {
     this.appendValueInput("values")
-        .setCheck("Number");
+      .setCheck("Number");
     this.appendDummyInput()
-        .appendField("回繰り返す");
+      .appendField("回繰り返す");
     this.appendStatementInput("roop_processing")
-        .setCheck(null);
+      .setCheck(null);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(270);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['value'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("値")
-        .appendField(new Blockly.FieldNumber(0), "NAME");
+      .appendField("値")
+      .appendField(new Blockly.FieldNumber(0), "NAME");
     this.setOutput(true, "Number");
     this.setColour(180);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['len_of_array'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("配列");
+      .appendField("配列");
     this.appendValueInput("array")
-        .setCheck("Array");
+      .setCheck("Array");
     this.appendDummyInput()
-        .appendField("の長さ");
+      .appendField("の長さ");
     this.setOutput(true, "Number");
     this.setColour(180);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['value_of_array'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("配列");
+      .appendField("配列");
     this.appendValueInput("array")
-        .setCheck("Array");
+      .setCheck("Array");
     this.appendDummyInput()
-        .appendField("の");
+      .appendField("の");
     this.appendValueInput("value")
-        .setCheck("Number");
+      .setCheck("Number");
     this.appendDummyInput()
-        .appendField("番目");
+      .appendField("番目");
     this.setOutput(true, "Number");
     this.setColour(180);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['max_value_of_array'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("配列");
+      .appendField("配列");
     this.appendValueInput("array")
-        .setCheck("Array");
+      .setCheck("Array");
     this.appendDummyInput()
-        .appendField("の最大値");
+      .appendField("の最大値");
     this.setOutput(true, "Number");
     this.setColour(180);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['min_value_of_array'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("配列");
+      .appendField("配列");
     this.appendValueInput("array")
-        .setCheck("Array");
+      .setCheck("Array");
     this.appendDummyInput()
-        .appendField("の最小値");
+      .appendField("の最小値");
     this.setOutput(true, "Number");
     this.setColour(180);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['included_in_the_array'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("配列");
+      .appendField("配列");
     this.appendValueInput("array")
-        .setCheck("Array");
+      .setCheck("Array");
     this.appendDummyInput()
-        .appendField("に");
+      .appendField("に");
     this.appendValueInput("value")
-        .setCheck("Number");
+      .setCheck("Number");
     this.appendDummyInput()
-        .appendField("が含まれている");
+      .appendField("が含まれている");
     this.setOutput(true, null);
     this.setColour(45);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['insert_into_an_array'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("配列名")
-        .appendField(new Blockly.FieldVariable("array"), "array_name")
-        .appendField("の");
+      .appendField("配列名")
+      .appendField(new Blockly.FieldVariable("array"), "array_name")
+      .appendField("の");
     this.appendValueInput("value1")
-        .setCheck("Number");
+      .setCheck("Number");
     this.appendDummyInput()
-        .appendField("番目に");
+      .appendField("番目に");
     this.appendValueInput("value2")
-        .setCheck("Number");
+      .setCheck("Number");
     this.appendDummyInput()
-        .appendField("を挿入する");
+      .appendField("を挿入する");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(90);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['remove_from_array'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("配列名")
-        .appendField(new Blockly.FieldVariable("array"), "array_name");
+      .appendField("配列名")
+      .appendField(new Blockly.FieldVariable("array"), "array_name");
     this.appendDummyInput()
-        .appendField("の");
+      .appendField("の");
     this.appendValueInput("value1")
-        .setCheck("Number");
+      .setCheck("Number");
     this.appendDummyInput()
-        .appendField("番目を削除する");
+      .appendField("番目を削除する");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(90);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['update_value_of_array'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("配列名")
-        .appendField(new Blockly.FieldVariable("array"), "array_name")
-        .appendField("の");
+      .appendField("配列名")
+      .appendField(new Blockly.FieldVariable("array"), "array_name")
+      .appendField("の");
     this.appendValueInput("value1")
-        .setCheck("Number");
+      .setCheck("Number");
     this.appendDummyInput()
-        .appendField("番目を");
+      .appendField("番目を");
     this.appendValueInput("value2")
-        .setCheck("Number");
+      .setCheck("Number");
     this.appendDummyInput()
-        .appendField("にする");
+      .appendField("にする");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(90);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['delete_array'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("配列名")
-        .appendField(new Blockly.FieldVariable("array"), "array_name")
-        .appendField("を空にする");
+      .appendField("配列名")
+      .appendField(new Blockly.FieldVariable("array"), "array_name")
+      .appendField("を空にする");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(90);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['append_to_array'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("配列名")
-        .appendField(new Blockly.FieldVariable("array"), "array_name");
+      .appendField("配列名")
+      .appendField(new Blockly.FieldVariable("array"), "array_name");
     this.appendDummyInput()
-        .appendField("に");
+      .appendField("に");
     this.appendValueInput("value1")
-        .setCheck("Number");
+      .setCheck("Number");
     this.appendDummyInput()
-        .appendField("を追加する");
+      .appendField("を追加する");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(90);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['define_array'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("配列")
-        .appendField(new Blockly.FieldVariable("array"), "array_name");
+      .appendField("配列")
+      .appendField(new Blockly.FieldVariable("array"), "array_name");
     this.setOutput(true, "Array");
     this.setColour(230);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
 Blockly.Blocks['substitute_array'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("配列");
+      .appendField("配列");
     this.appendValueInput("array")
-        .setCheck("Array");
+      .setCheck("Array");
     this.appendDummyInput()
-        .appendField("を配列名")
-        .appendField(new Blockly.FieldVariable("array_"), "array_name")
-        .appendField("とする");
+      .appendField("を配列名")
+      .appendField(new Blockly.FieldVariable("array_"), "array_name")
+      .appendField("とする");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(230);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 
 };
