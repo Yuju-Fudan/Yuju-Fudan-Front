@@ -276,11 +276,10 @@
 
                                     <p>code is " {{ code }} ".</p>
                                 </div>
-                                <div class="row">
-                              <div class="btn btn-2084 center">Share!
-                              </div>
-
-
+                                <div id="tweet">
+                                    <div  class="row">
+                                        <div class="btn btn-2084 center"><a v-on:click=send_tweet>Share!</a></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -297,10 +296,36 @@
     <img src="img/backleft.png" class="left" alt="">
     
 
+    
+    <script>
+        var tweet = new Vue({
+            el: '#tweet',
+            data: {},
+            methods: {
+                send_tweet: function (event) {
+                    var s, url;
+                    s = "投稿するテキスト";
+                    url = document.location.href;
+                    
+                    if (s != "") {
+                        if (s.length > 140) {
+                            //文字数制限
+                            alert("テキストが140字を超えています");
+                        } else {
+                            //投稿画面を開く
+                            url = "http://twitter.com/share?url=" + escape(url) + "&text=" + s;
+                            window.open(url,"_blank","width=600,height=300");
+                        }
+                    }
+                }
+            }
+        })
+    </script>
     <script>
         var workspace = Blockly.inject('blocklyDiv',                                                  // ライブラリに読み込ませる
           {toolbox: document.getElementById('toolbox')});
     </script>
+    
     <script>
         var send_code = new Vue({
             el: '#send_code',
@@ -331,15 +356,15 @@
                     result = [{"0": {"score": 0,"location": {"a1": 0,"b1": 0, "c1": 0,"d1": 0,"a2": 2,"b2": 0,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 2,"c4": 0,"d4": 0}},"1": {"score": 0,"location": {"a1": 2,"b1": 2, "c1": 0,"d1": 2,"a2": 0,"b2": 0,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 0,"c4": 0,"d4": 0}},"2": {"score": 4,"location": {"a1": 4,"b1": 2, "c1": 0,"d1": 0,"a2": 0,"b2": 0,"c2": 2,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 0,"c4": 0,"d4": 0}},"3": {"score": 4,"location": {"a1": 4,"b1": 2, "c1": 2,"d1": 0,"a2": 0,"b2": 0,"c2": 0,"d2": 0,"a3": 0,"b3": 2,"c3": 0,"d3": 0,"a4": 0,"b4": 0,"c4": 0,"d4": 0}},"4": {"score": 8,"location": {"a1": 4,"b1": 4, "c1": 2,"d1": 0,"a2": 0,"b2": 0,"c2": 0,"d2": 4,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 0,"c4": 0,"d4": 0}},"5": {"score": 16,"location": {"a1": 8,"b1": 2, "c1": 0,"d1": 0,"a2": 4,"b2": 4,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 0,"c4": 0,"d4": 0}},"6": {"score": 24,"location": {"a1": 8,"b1": 2, "c1": 0,"d1": 0,"a2": 8,"b2": 0,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 2,"c4": 0,"d4": 0}},"7": {"score": 44,"location": {"a1": 16,"b1": 4, "c1": 0,"d1": 0,"a2": 0,"b2": 0,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 0,"c4": 0,"d4": 2}},"8": {"score": 44,"location": {"a1": 16,"b1": 4, "c1": 0,"d1": 2,"a2": 0,"b2": 0,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 0,"c4": 0,"d4": 2}},"9": {"score": 48,"location": {"a1": 16,"b1": 4, "c1": 0,"d1": 4,"a2": 0,"b2": 0,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 2,"c4": 0,"d4": 0}},"10": {"score": 56,"location": {"a1": 16,"b1": 8, "c1": 0,"d1": 0,"a2": 0,"b2": 0,"c2": 0,"d2": 0,"a3": 2,"b3": 0,"c3": 0,"d3": 0,"a4": 2,"b4": 0,"c4": 0,"d4": 0}},"11": {"score": 60,"location": {"a1": 16,"b1": 8, "c1": 0,"d1": 0,"a2": 4,"b2": 0,"c2": 0,"d2": 0,"a3": 0,"b3": 0,"c3": 0,"d3": 0,"a4": 0,"b4": 2,"c4": 0,"d4": 0}}}];
                     this.code = code
                     this.result = result
-                    axios.post('https://gazeat.herokuapp.com/api/post_game_status',{withCredentials: true}, {
-                        code: 'b.move_to_left() b.move_to_up() b.move_to_down() b.move_to_right()'
+
+                    const params = new URLSearchParams();
+                    params.append('code', 'b.move_to_left() b.move_to_up() b.move_to_down() b.move_to_right()');
+                    axios.post('https://gazeat.herokuapp.com/api/post_game_status/', params, 
+                        { headers: { Authorization: 'Bearer ${eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJ1c2VybmFtZSI6ImlkOC0xQGV4YW1wbGUuY29tIiwiZXhwIjoxNjQ3MDM3NDE2LCJlbWFpbCI6ImlkOC0xQGV4YW1wbGUuY29tIn0.8NlAtdajl3A7TaMY-315ODo6p6PpWuGuWVTm0-DQX_I}' }
                     })
-                    .then(function (response) {
-                        console.log(response);
-                    })
-                    .catch(function (error) {
-                        console.log(error);
-                    });
+                        .then(response => console.log(response))
+                        .catch(err => console.log(err));
+
                     // axios.get('https://gazeat.herokuapp.com/post_game_status',
                     // 'b.move_to_left() b.move_to_up() b.move_to_down() b.move_to_right()', 
                     // {withCredentials: true})
@@ -347,6 +372,7 @@
                         // .catch(error => console.log(error))
                     // for (let step = 0; step < 3; step++) {
                     // this.step = 0;
+                    
                     setInterval(() => {
                         // console.log(Object.keys(this.result[0]).length)
                         if ( this.step < Object.keys(this.result[0]).length ) {
@@ -414,9 +440,11 @@
             }
         )
     </script>
+    
     <script src="js/CodeBlocks.js"></script>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
 </body>
 
 </html>
