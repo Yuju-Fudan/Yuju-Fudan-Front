@@ -341,15 +341,11 @@
                         "Content-Type": "application/json",
                         "Authorization": "JWT " + jwt_token
                     };
-                    console.log("v11")
+                    console.log("v12")
                     params.append("code", 'b.move_to_left() b.move_to_up() b.move_to_down() b.move_to_right()')
                     axios.post('https://gazeat.herokuapp.com/api/post_game_status/', params, header = header)
-                        .then(function (response) {
-                            console.log(response);
-                        })
-                        .catch(function (error) {
-                            console.log(error);
-                        });
+                        .then(response => console.log(response))
+                        .catch(error => console.log(error))
                     // for (let step = 0; step < 3; step++) {
                     // this.step = 0;
                     setInterval(() => {
