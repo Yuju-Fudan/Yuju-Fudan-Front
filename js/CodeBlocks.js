@@ -3,7 +3,7 @@ Blockly.Blocks['column'] = {
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown([["1","a"], ["2","b"], ["3","c"], ["4","d"]]), "column_list")
         .appendField("列目");
-    this.setOutput(true, "location");
+    this.setOutput(true, "column");
     this.setColour(0);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -15,7 +15,7 @@ Blockly.Blocks['row'] = {
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["4","4"]]), "row_list")
         .appendField("行目");
-    this.setOutput(true, "location");
+    this.setOutput(true, "row");
     this.setColour(0);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -25,7 +25,7 @@ Blockly.Blocks['row'] = {
 Blockly.Blocks['col_and_row'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["4","4"]]), "row_list")
+        .appendField(new Blockly.FieldDropdown([["1","a"], ["2","b"], ["3","c"], ["4","d"]]), "column_list")
         .appendField("列目の")
         .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["4","4"]]), "row_list")
         .appendField("行目");
@@ -39,13 +39,43 @@ Blockly.Blocks['col_and_row'] = {
 Blockly.Blocks['get_value_from_locations'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("位置が");
+        .appendField("位置(列+行)が");
     this.appendValueInput("location")
         .setCheck("location");
     this.appendDummyInput()
         .appendField("の値");
     this.setOutput(true, "Number");
     this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['get_value_from_column'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("位置(列)が");
+    this.appendValueInput("column")
+        .setCheck("column");
+    this.appendDummyInput()
+        .appendField("の値（配列）");
+    this.setOutput(true, "Array");
+    this.setColour(225);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['get_value_from_row'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("位置(行)が");
+    this.appendValueInput("row")
+        .setCheck("row");
+    this.appendDummyInput()
+        .appendField("の値（配列）");
+    this.setOutput(true, "Array");
+    this.setColour(225);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -58,9 +88,9 @@ Blockly.Blocks['get_locations_from_value'] = {
     this.appendValueInput("value")
         .setCheck("Number");
     this.appendDummyInput()
-        .appendField("の座標");
-    this.setOutput(true, "location");
-    this.setColour(0);
+        .appendField("の座標（配列）");
+    this.setOutput(true, "Array");
+    this.setColour(225);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -532,3 +562,219 @@ Blockly.Blocks['value'] = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['len_of_array'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("配列");
+    this.appendValueInput("array")
+        .setCheck("Array");
+    this.appendDummyInput()
+        .appendField("の長さ");
+    this.setOutput(true, "Number");
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['value_of_array'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("配列");
+    this.appendValueInput("array")
+        .setCheck("Array");
+    this.appendDummyInput()
+        .appendField("の");
+    this.appendValueInput("value")
+        .setCheck("Number");
+    this.appendDummyInput()
+        .appendField("番目");
+    this.setOutput(true, "Number");
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['max_value_of_array'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("配列");
+    this.appendValueInput("array")
+        .setCheck("Array");
+    this.appendDummyInput()
+        .appendField("の最大値");
+    this.setOutput(true, "Number");
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['min_value_of_array'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("配列");
+    this.appendValueInput("array")
+        .setCheck("Array");
+    this.appendDummyInput()
+        .appendField("の最小値");
+    this.setOutput(true, "Number");
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['included_in_the_array'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("配列");
+    this.appendValueInput("array")
+        .setCheck("Array");
+    this.appendDummyInput()
+        .appendField("に");
+    this.appendValueInput("value")
+        .setCheck("Number");
+    this.appendDummyInput()
+        .appendField("が含まれている");
+    this.setOutput(true, null);
+    this.setColour(45);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['insert_into_an_array'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("配列名")
+        .appendField(new Blockly.FieldVariable("array"), "array_name")
+        .appendField("の");
+    this.appendValueInput("value1")
+        .setCheck("Number");
+    this.appendDummyInput()
+        .appendField("番目に");
+    this.appendValueInput("value2")
+        .setCheck("Number");
+    this.appendDummyInput()
+        .appendField("を挿入する");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(90);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['remove_from_array'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("配列名")
+        .appendField(new Blockly.FieldVariable("array"), "array_name");
+    this.appendDummyInput()
+        .appendField("の");
+    this.appendValueInput("value1")
+        .setCheck("Number");
+    this.appendDummyInput()
+        .appendField("番目を削除する");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(90);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['update_value_of_array'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("配列名")
+        .appendField(new Blockly.FieldVariable("array"), "array_name")
+        .appendField("の");
+    this.appendValueInput("value1")
+        .setCheck("Number");
+    this.appendDummyInput()
+        .appendField("番目を");
+    this.appendValueInput("value2")
+        .setCheck("Number");
+    this.appendDummyInput()
+        .appendField("にする");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(90);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['delete_array'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("配列名")
+        .appendField(new Blockly.FieldVariable("array"), "array_name")
+        .appendField("を空にする");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(90);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['append_to_array'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("配列名")
+        .appendField(new Blockly.FieldVariable("array"), "array_name");
+    this.appendDummyInput()
+        .appendField("に");
+    this.appendValueInput("value1")
+        .setCheck("Number");
+    this.appendDummyInput()
+        .appendField("を追加する");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(90);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['define_array'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("配列")
+        .appendField(new Blockly.FieldVariable("array"), "array_name");
+    this.setOutput(true, "Array");
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['substitute_array'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("配列");
+    this.appendValueInput("array")
+        .setCheck("Array");
+    this.appendDummyInput()
+        .appendField("を配列名")
+        .appendField(new Blockly.FieldVariable("array_"), "array_name")
+        .appendField("とする");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+
+};
+
