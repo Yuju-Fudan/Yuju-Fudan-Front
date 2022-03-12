@@ -1,7 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+    
+    
+ <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+
+<meta property="og:title" content="Gazeat" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yuju-fudan.github.io/Yuju-Fudan-Front/console.html" />
+<meta property="og:image" content="https://yuju-fudan.github.io/Yuju-Fudan-Front/img/ogp.png" />
+<meta property="og:site_name" content="Gazeat" />
+<meta property="og:description" content="2048をプログラムに解かせよう" />
+
+
+
+<!-- ※Twitter共通設定 -->
+<meta name="twitter:card" content="summary_large_image" />
+
+
+    
+     
+     
+     
+     
+     
+     
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,8 +55,8 @@
 <body>
     <nav class="navbar navbar-expand-lg ">
         <a class="navbar-brand" href="#">
-            <h1>gazeat</h1>
-            <!-- <img src="img/logos.png" width="120px" alt=""> -->
+          
+             <img src="img/logos.png" width="120px" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -255,7 +278,9 @@
                                 </div>
                                 <div id="tweet">
                                     <div class="row">
-                                        <div class="btn btn-2084 center"><a v-on:click=send_tweet>Share!</a></div>
+                                        <a v-on:click=send_tweet>
+                                        <div class="btn btn-2084 center">Share!</div>
+                                            </a>
                                     </div>
                                 </div>
                             </div>
@@ -281,7 +306,7 @@
                 send_tweet: function (event) {
                     var s, url;
                     this.score = send_code.score
-                    s = "あなたの考えたアルゴリズムが" + this.score + "点を取りました！";
+                    s = "あなたの考えたアルゴリズムが" + this.score + "点を取りました！ #gazeat";
                     url = document.location.href;
 
                     if (s != "") {
