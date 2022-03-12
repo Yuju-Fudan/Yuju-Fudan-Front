@@ -6,7 +6,7 @@ var tweet = new Vue({
     methods: {
         send_tweet: function (event) {
             var s, url;
-            s = "あなたの考えたアルゴリズムが"+this.score+"点を取りました！";
+            s = "あなたの考えたアルゴリズムが"+this.score+"点を取りました！ #gazeat";
             url = document.location.href;
             
             if (s != "") {
