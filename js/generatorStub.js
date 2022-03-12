@@ -281,14 +281,14 @@ Blockly.Python['insert_into_an_array'] = function(block) {
   var variable_array_name = Blockly.Python.nameDB_.getName(block.getFieldValue('array_name'), Blockly.Variables.NAME_TYPE);
   var value_value1 = Blockly.Python.valueToCode(block, 'value1', Blockly.Python.ORDER_ATOMIC);
   var value_value2 = Blockly.Python.valueToCode(block, 'value2', Blockly.Python.ORDER_ATOMIC);
-  var code = `${value_array_name} = b.insert_into_array(${value_array_name}, ${value_value1}, ${value_value2})`;
+  var code = `${value_array_name} = b.insert_into_array(${value_array_name}, ${value_value1}, ${value_value2})\n`;
   return code;
 };
 
 Blockly.Python['remove_from_array'] = function(block) {
   var variable_array_name = Blockly.Python.nameDB_.getName(block.getFieldValue('array_name'), Blockly.Variables.NAME_TYPE);
   var value_value1 = Blockly.Python.valueToCode(block, 'value1', Blockly.Python.ORDER_ATOMIC);
-  var code = `${value_array_name} = b.remove_from_array(${value_array_name}, ${value_value})`;
+  var code = `${value_array_name} = b.remove_from_array(${value_array_name}, ${value_value})\n`;
   return code;
 };
 
@@ -296,20 +296,20 @@ Blockly.Python['update_value_of_array'] = function(block) {
   var variable_array_name = Blockly.Python.nameDB_.getName(block.getFieldValue('array_name'), Blockly.Variables.NAME_TYPE);
   var value_value1 = Blockly.Python.valueToCode(block, 'value1', Blockly.Python.ORDER_ATOMIC);
   var value_value2 = Blockly.Python.valueToCode(block, 'value2', Blockly.Python.ORDER_ATOMIC);
-  var code = `${value_array_name} = b.update_value_of_array(${value_array_name}, ${value_value1}, ${value_value2})`;
+  var code = `${value_array_name} = b.update_value_of_array(${value_array_name}, ${value_value1}, ${value_value2})\n`;
   return code;
 };
 
 Blockly.Python['delete_array'] = function(block) {
   var variable_array_name = Blockly.Python.nameDB_.getName(block.getFieldValue('array_name'), Blockly.Variables.NAME_TYPE);
-  var code = `${value_array_name} = b.delete_array(${value_array_name})`;
+  var code = `${value_array_name} = b.delete_array(${value_array_name})\n`;
   return code;
 };
 
 Blockly.Python['append_to_array'] = function(block) {
   var variable_array_name = Blockly.Python.nameDB_.getName(block.getFieldValue('array_name'), Blockly.Variables.NAME_TYPE);
   var value_value = Blockly.Python.valueToCode(block, 'value1', Blockly.Python.ORDER_ATOMIC);
-  var code = `${value_array_name} = b.append_to_array(${value_array_name}, ${value_value})`;
+  var code = `${value_array_name} = b.append_to_array(${value_array_name}, ${value_value})\n`;
   return code;
 };
 
