@@ -781,4 +781,3 @@ Blockly.Blocks['substitute_array'] = {
   }
 
 };
-

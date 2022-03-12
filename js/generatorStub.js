@@ -323,10 +323,3 @@ Blockly.Python['define_array'] = function(block) {
   return [code, Blockly.Python.ORDER_NONE];
 };
 
-Blockly.Python['substitute_array'] = function(block) {
-  var value_array = Blockly.Python.valueToCode(block, 'array', Blockly.Python.ORDER_ATOMIC);
-  var variable_array_name = Blockly.Python.nameDB_.getName(block.getFieldValue('array_name'), Blockly.Variables.NAME_TYPE);
-  var code = `${value_array_name} = b.substitute_array(${value_array}, ${value_array_name})`;
-  return [code, Blockly.Python.ORDER_NONE];
-};
-
