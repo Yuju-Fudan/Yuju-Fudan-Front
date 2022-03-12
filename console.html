@@ -35,34 +35,14 @@
             <h1>gazeat</h1>
             <!-- <img src="img/logos.png" width="120px" alt=""> -->
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-            </ul>
         </div>
     </nav>
     <div class="container">
-
         <div class="row">
-            <div style="margin-top: 40px;" class="col-md-12 center">
-                <h1>Score hogehogept</h1>
-
-            </div>
         </div>
         <div class="row" style="margin-top:80px">
             <div class="col-md-8">
@@ -148,115 +128,117 @@
                 </div>
 
             </div>
-
             <div class="col-md-4">
                 <div class="row">
                     <div class="col-12">
                         <div class="card play_area play">
+                            <div style="margin-top: 10px;" class="col-md-12 center">
+                                <h3>Score HOGEpt</h3>
+                
+                            </div>
                             <div class="">
                                 <div id="send_code">
-                                    <div class="container-fluid center">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="row" style="width: 256px;">
-                                                    <div class="col-3">
-                                                        <div id="a1" class="box nums0">
-                                                            <p class="nums">{{a1}}</p>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-3">
-                                                        <div id="b1" class="box nums0">
-                                                            <p class="nums">{{b1}}</p>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-3">
-                                                        <div id="c1" class="box nums0">
-                                                            <p class="nums">{{c1}}</p>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-3">
-                                                        <div id="d1" class="box nums0">
-                                                            <p class="nums">{{d1}}</p>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-3">
-                                                        <div id="a2" class="box nums0">
-                                                            <p class="nums">{{a2}}</p>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-3">
-                                                        <div id="b2" class="box nums0">
-                                                            <p class="nums">{{b2}}</p>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-3">
-                                                        <div id="c2" class="box nums0">
-                                                            <p class="nums">{{c2}}</p>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-3">
-                                                        <div id="d2" class="box nums0">
-                                                            <p class="nums">{{d2}}</p>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-3">
-                                                        <div id="a3" class="box nums0">
-                                                            <p class="nums">{{a3}}</p>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-3">
-                                                        <div id="b3" class="box nums0">
-                                                            <p class="nums">{{b3}}</p>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-3">
-                                                        <div id="c3" class="box nums0">
-                                                            <p class="nums">{{c3}}</p>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-3">
-                                                        <div id="d3" class="box nums0">
-                                                            <p class="nums">{{d3}}</p>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-3">
-                                                        <div id="a4" class="box nums0">
-                                                            <p class="nums">{{a4}}</p>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-3">
-                                                        <div id="b4" class="box nums0">
-                                                            <p class="nums">{{b4}}</p>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-3">
-                                                        <div id="c4" class="box nums0">
-                                                            <p class="nums">{{c4}}</p>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-3">
-                                                        <div id="d4" class="box nums0">
-                                                            <p class="nums">{{d4}}</p>
-                                                        </div>
-
+                                <div class="container-fluid center">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row" style="width: 256px;">
+                                                <div class="col-3">
+                                                    <div id="a1" class="box nums0">
+                                                        <p class="nums nums0" v-if="a1===0"></p>
+                                                        <p class="nums nums0" v-else>{{a1}}</p>
                                                     </div>
 
+                                                </div>
+                                                <div class="col-3">
+                                                    <div id="b1" class="box nums0">
+                                                        <p class="nums nums0" v-if="b1===0"></p>
+                                                        <p class="nums nums0" v-else>{{b1}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div id="c1" class="box nums0">
+                                                        <p class="nums nums0" v-if="c1===0"></p>
+                                                        <p class="nums nums0" v-else>{{c1}}</p>
+                                                    </div>
 
+                                                </div>
+                                                <div class="col-3">
+                                                    <div id="d1" class="box nums0">
+                                                        <p class="nums nums0" v-if="d1===0"></p>
+                                                        <p class="nums nums0" v-else>{{d1}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div id="a2" class="box nums0">
+                                                        <p class="nums nums0" v-if="a2===0"></p>
+                                                        <p class="nums nums0" v-else>{{a2}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div id="b2" class="box nums0">
+                                                        <p class="nums nums0" v-if="b2===0"></p>
+                                                        <p class="nums nums0" v-else>{{b2}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div id="c2" class="box nums0">
+                                                        <p class="nums nums0" v-if="c2===0"></p>
+                                                        <p class="nums nums0" v-else>{{c2}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div id="d2" class="box nums0">
+                                                        <p class="nums nums0" v-if="d2===0"></p>
+                                                        <p class="nums nums0" v-else>{{d2}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div id="a3" class="box nums0">
+                                                        <p class="nums nums0" v-if="a3===0"></p>
+                                                        <p class="nums nums0" v-else>{{a3}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div id="b3" class="box nums0">
+                                                        <p class="nums nums0" v-if="b3===0"></p>
+                                                        <p class="nums nums0" v-else>{{b3}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div id="c3" class="box nums0">
+                                                        <p class="nums nums0" v-if="c3===0"></p>
+                                                        <p class="nums nums0" v-else>{{c3}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div id="d3" class="box nums0">
+                                                        <p class="nums nums0" v-if="d3===0"></p>
+                                                        <p class="nums nums0" v-else>{{d3}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div id="a4" class="box nums0">
+                                                        <p class="nums nums0" v-if="a4===0"></p>
+                                                        <p class="nums nums0" v-else>{{a4}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div id="b4" class="box nums0">
+                                                        <p class="nums nums0" v-if="b4===0"></p>
+                                                        <p class="nums nums0" v-else>{{b4}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div id="c4" class="box nums0">
+                                                        <p class="nums nums0" v-if="c4===0"></p>
+                                                        <p class="nums nums0" v-else>{{c4}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div id="d4" class="box nums0">
+                                                        <p class="nums nums0" v-if="d4===0"></p>
+                                                        <p class="nums nums0" v-else>{{d4}}</p>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -275,14 +257,12 @@
                                             </div>
                                         </div>
 
-
-                                        <p>code is " {{ code }} ".</p>
-                                    </div>
-                                    <div class="row">
-                                        <div class="btn btn-2084 center">Share!
-                                        </div>
-
-
+                                    <p>code is " {{ code }} ".</p>
+                                </div>
+                            </div>
+                                <div id="tweet">
+                                    <div  class="row">
+                                        <div class="btn btn-2084 center"><a v-on:click=send_tweet>Share!</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -299,33 +279,64 @@
     <img src="img/backleft.png" class="left" alt="">
 
 
+    
+    
+    <script>
+        var tweet = new Vue({
+            el: '#tweet',
+            data: {
+                score: 0
+            },
+            methods: {
+                send_tweet: function (event) {
+                    var s, url;
+                    this.score = send_code.score
+                    s = "あなたの考えたアルゴリズムが"+this.score+"点を取りました！";
+                    url = document.location.href;
+                    
+                    if (s != "") {
+                        if (s.length > 140) {
+                            //文字数制限
+                            alert("テキストが140字を超えています");
+                        } else {
+                            //投稿画面を開く
+                            url = "http://twitter.com/share?url=" + escape(url) + "&text=" + s;
+                            window.open(url,"_blank","width=600,height=300");
+                        }
+                    }
+                }
+            }
+        })
+    </script>>
     <script>
         var workspace = Blockly.inject('blocklyDiv',
             { toolbox: document.getElementById('toolbox') });
     </script>
+    
     <script>
         var send_code = new Vue({
             el: '#send_code',
             data: {
                 code: "",
                 result: 0,
-                a1: 0,
-                b1: 0,
-                c1: 0,
-                d1: 0,
-                a2: 0,
-                b2: 0,
-                c2: 0,
-                d2: 0,
-                a3: 0,
-                b3: 0,
-                c3: 0,
-                d3: 0,
-                a4: 0,
-                b4: 0,
-                c4: 0,
-                d4: 0,
-                step: 0
+                a1: '',
+                b1: '',
+                c1: '',
+                d1: '',
+                a2: '',
+                b2: '',
+                c2: '',
+                d2: '',
+                a3: '',
+                b3: '',
+                c3: '',
+                d3: '',
+                a4: '',
+                b4: '',
+                c4: '',
+                d4: '',
+                step: 0,
+                score: 0
             },
             methods: {
                 greet: function (event) {
@@ -416,7 +427,6 @@
                         } else {
                             clearInterval();
                         }
-                        // }, 3000)
                     }, 500)
                 }
             },
@@ -424,76 +434,12 @@
                 let jwt_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJ1c2VybmFtZSI6ImlkOC0xQGV4YW1wbGUuY29tIiwiZXhwIjoxNjQ3MDQ2OTUxLCJlbWFpbCI6ImlkOC0xQGV4YW1wbGUuY29tIn0.JgPInKsrVeEmxIgCZXRHJTCl1ihKFS3RDt6xJuJzQZY'
                 localStorage.setItem('token', jwt_token)
             }
-        }
-        )
-        //             setInterval(() => {
-        //                 if (this.step < Object.keys(this.result[0]).length) {
-        //                     // this.a1 = result[0][this.step]["location"]["a1"]
-        //                     // this.b1 = result[0][this.step]["location"]["b1"]
-        //                     // this.c1 = result[0][this.step]["location"]["c1"]
-        //                     // this.d1 = result[0][this.step]["location"]["d1"]
-        //                     // this.a2 = result[0][this.step]["location"]["a2"]
-        //                     // this.b2 = result[0][this.step]["location"]["b2"]
-        //                     // this.c2 = result[0][this.step]["location"]["c2"]
-        //                     // this.d2 = result[0][this.step]["location"]["d2"]
-        //                     // this.a3 = result[0][this.step]["location"]["a3"]
-        //                     // this.b3 = result[0][this.step]["location"]["b3"]
-        //                     // this.c3 = result[0][this.step]["location"]["c3"]
-        //                     // this.d3 = result[0][this.step]["location"]["d3"]
-        //                     // this.a4 = result[0][this.step]["location"]["a4"]
-        //                     // this.b4 = result[0][this.step]["location"]["b4"]
-        //                     // this.c4 = result[0][this.step]["location"]["c4"]
-        //                     // this.d4 = result[0][this.step]["location"]["d4"]
-        //                     // var target = document.getElementById("a1");
-        //                     // target.className = "box nums" + this.a1;
-        //                     // var target = document.getElementById("b1");
-        //                     // target.className = "box nums" + this.b1;
-        //                     // var target = document.getElementById("c1");
-        //                     // target.className = "box nums" + this.c1;
-        //                     // var target = document.getElementById("d1");
-        //                     // target.className = "box nums" + this.d1;
-        //                     // var target = document.getElementById("a2");
-        //                     // target.className = "box nums" + this.a2;
-        //                     // var target = document.getElementById("b2");
-        //                     // target.className = "box nums" + this.b2;
-        //                     // var target = document.getElementById("c2");
-        //                     // target.className = "box nums" + this.c2;
-        //                     // var target = document.getElementById("d2");
-        //                     // target.className = "box nums" + this.d2;
-        //                     // var target = document.getElementById("a3");
-        //                     // target.className = "box nums" + this.a3;
-        //                     // var target = document.getElementById("b3");
-        //                     // target.className = "box nums" + this.b3;
-        //                     // var target = document.getElementById("c3");
-        //                     // target.className = "box nums" + this.c3;
-        //                     // var target = document.getElementById("d3");
-        //                     // target.className = "box nums" + this.d3;
-        //                     // var target = document.getElementById("a4");
-        //                     // target.className = "box nums" + this.a4;
-        //                     // var target = document.getElementById("b4");
-        //                     // target.className = "box nums" + this.b4;
-        //                     // var target = document.getElementById("c4");
-        //                     // target.className = "box nums" + this.c4;
-        //                     // var target = document.getElementById("d4");
-        //                     // target.className = "box nums" + this.d4;
-        //                     this.step = this.step + 1;
-        //                     console.log(this.step)
-        //                 } else {
-        //                     clearInterval();
-        //                 }
-        //             }, 3000)
-        //         }
-        //     },
-        //     mounted() {
-        //         let jwt_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJ1c2VybmFtZSI6ImlkOC0xQGV4YW1wbGUuY29tIiwiZXhwIjoxNjQ3MDQ2OTUxLCJlbWFpbCI6ImlkOC0xQGV4YW1wbGUuY29tIn0.JgPInKsrVeEmxIgCZXRHJTCl1ihKFS3RDt6xJuJzQZY'
-        //         localStorage.setItem('token', jwt_token)
-        //     }
-        // }
-        // )
     </script>
+    
     <script src="js/CodeBlocks.js"></script>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
 </body>
 
 </html>
