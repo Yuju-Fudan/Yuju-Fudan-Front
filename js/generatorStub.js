@@ -1,6 +1,6 @@
 Blockly.Python['column'] = function(block) {
   var dropdown_column_list = block.getFieldValue('column_list');
-  var code = `col=${dropdown_column_list}`;
+  var code = `col="${dropdown_column_list}"`;
   return [code, Blockly.Python.ORDER_NONE];
 };
 
@@ -13,7 +13,7 @@ Blockly.Python['row'] = function(block) {
 Blockly.Python['col_and_row'] = function(block) {
   var dropdown_column_list = block.getFieldValue('column_list');
   var dropdown_row_list = block.getFieldValue('row_list');
-  var code = `col=${dropdown_column_list}, row=${dropdown_row_list}`;
+  var code = `col="${dropdown_column_list}", row=${dropdown_row_list}`;
   return [code, Blockly.Python.ORDER_NONE];
 };
 
@@ -320,10 +320,15 @@ Blockly.Python['define_array'] = function(block) {
 };
 
 Blockly.Python['substitute_array'] = function(block) {
+<<<<<<< HEAD
+  var value_array = Blockly.Python.valueToCode(block, 'array', Blockly.Python.ORDER_ATOMIC);
+=======
 
   var value_array = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
 
+>>>>>>> 5a3b641b0fd885bbbcde75d5db364c1c3b50a4cf
   var variable_array_name = Blockly.Python.nameDB_.getName(block.getFieldValue('array_name'), Blockly.Variables.NAME_TYPE);
   var code = `${value_array_name} = b.substitute_array(${value_array}, ${value_array_name})`;
   return [code, Blockly.Python.ORDER_NONE];
 };
+
