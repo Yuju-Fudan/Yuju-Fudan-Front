@@ -15,7 +15,7 @@ var tweet = new Vue({
                     alert("テキストが140字を超えています");
                 } else {
                     //投稿画面を開く
-                    url = "http://twitter.com/share?url=" + escape(url) + "&text=" + s;
+                    url = "http://twitter.com/share?hashtags="gazeat"&url=" + escape(url) + "&text=" + s;
                     window.open(url,"_blank","width=600,height=300");
                 }
             }
