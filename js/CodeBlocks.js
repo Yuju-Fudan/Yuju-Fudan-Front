@@ -777,4 +777,7 @@ Blockly.Blocks['substitute_array'] = {
   }
 
 };
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5a3b641b0fd885bbbcde75d5db364c1c3b50a4cf

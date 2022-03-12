@@ -26,33 +26,34 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light ">
         <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-          </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+            </ul>
         </div>
-      </nav>
+    </nav>
     <div class="container">
         <div class="row margin-top  ">
             <div class="col-md-7 center">
                 <div class="card">
                     <h1>2083 <span></span></h1>
                     <div class="card-body">
-                        <form>
+                        <form id="app">
                             <div class="form-group">
                                 <label for="Email1">メールアドレス</label>
                                 <input type="email" class="form-control" id="Email1" aria-describedby="emailHelp"
@@ -66,10 +67,16 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <button type="submit" class="btn btn-2084">&#x1f3b2;ログイン</button>
+                                        <!-- <button @click="loginAccount" type="submit"
+                                            class="btn btn-2084">&#x1f3b2;ログイン</button> -->
+                                        <a href="console.html"><button @click="loginAccount" type="submit"
+                                                class="btn btn-2084">&#x1f3b2;ログイン</button></a>
                                     </div>
+                                    <!-- <div id="register" class="col-sm-6"> -->
                                     <div class="col-sm-6">
-                                        <button type="submit" class="btn btn-2084">&#x1f973;新規登録</button>
+                                        <!-- <button id="register" type="submit" class="btn btn-2084">&#x1f973;新規登録</button> -->
+                                        <button @click="registerAccount" type="submit"
+                                            class="btn btn-2084">&#x1f973;新規登録</button>
                                     </div>
                                 </div>
 
@@ -81,13 +88,13 @@
 
             </div>
         </div>
-        <div id="huga">
+        <!-- <div id="huga">
             <h1>{{ message }}</h1>
         </div>
         <div id="app">
             <h1>{{ message }}</h1>
-        </div>
-    
+        </div> -->
+
     </div>
 
     <span class="light">2022 Yuju-Fudan</span>
@@ -97,51 +104,77 @@
         twemoji.parse(document.body);
     </script>
 
-<script src="https://unpkg.com/vue@next"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
-    </script>
+        </script>
     <script>
-
-
-Vue.createApp({
-    el: '#app',
-    data(){
-        return {
-            message: 'Hello Axioaaas',
-        }
-    },
-    mounted(){
-        axios.get('https://jsonplaceholder.typicode.com/users')
-            .then(response => console.log(response))
-            .catch(error => console.log(error))
-    }
-}).mount('#app')
-
-
-
-
-Vue.createApp({
-    el: '#huga',
-    data(){
-        return {
-            message: 'Hello Axios',
-        }
-    },
-    mounted(){
-        axios.get('https://jsonplaceholder.typicode.com/users')
-            .then(response => console.log(response))
-            .catch(error => console.log(error))
-    }
-}).mount('#huga')
-        </script> 
+        Vue.createApp({
+            el: '#app',
+            data() {
+                return {
+                    message: 'Hello Axios',
+                }
+            },
+            methods: {
+                registerAccount: function () {
+                    let params = new URLSearchParams();
+                    let email = document.getElementById('Email1');
+                    let password = document.getElementById('Password');
+                    params.append("email", email.value)
+                    params.append("password", password.value)
+                    console.log("12")
+                    console.log("email", email.value)
+                    console.log("password", password.value)
+                    axios.post('https://gazeat.herokuapp.com/api/register/', params)
+                        .then(response => console.log(response.data))
+                        .catch(error => console.log(error))
+                    // console.log("----------------------------------------")
+                    // console.log(response)
+                    // console.log(response.data)
+                    // console.log(response.data.body)
+                    // console.log("----------------------------------------")
+                },
+                loginAccount: function () {
+                    let params = new URLSearchParams();
+                    let header = { "Content-Type": "application/json" };
+                    let email = document.getElementById('Email1');
+                    let password = document.getElementById('Password');
+                    params.append("email", email.value)
+                    params.append("password", password.value)
+                    console.log("v13")
+                    console.log("email", email.value)
+                    console.log("password", password.value)
+                    axios.post('https://gazeat.herokuapp.com/api/login/', params, header = header)
+                        .then(response => console.log(response.data))
+                        .catch(error => console.log(error))
+                    // console.log("----------------------------------------")
+                    // console.log(response)
+                    // console.log(response.data)
+                    // console.log(response.data.body)
+                    // console.log("----------------------------------------")
+                    // try {
+                    //     location = 'https://yuju-fudan.github.io/Yuju-Fudan-Front/console.html';
+                    // } catch {
+                    //     console.log("error")
+                    // }
+                }
+            },
+            // mounted() {
+            //     axios.get('https://jsonplaceholder.typicode.com/users')
+            //         // axios.get('https://gazeat.herokuapp.com/api/register/')
+            //         .then(response => console.log(response))
+            //         .catch(error => console.log(error))
+            // }
+        }).mount('#app')
+    </script>
 </body>
 
 </html>
