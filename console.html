@@ -26,6 +26,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.3"></script>
     <script src="./js/generatorStub.js"></script>
+    
     <title>Document</title>
 </head>
 
@@ -159,97 +160,97 @@
                                         <div class="col-md-12">
                                             <div class="row" style="width: 256px;">
                                                 <div class="col-3">
-                                                    <div id="a1" class="box nums0">
+                                                    <div id="a1" class="box nums">
                                                         <p class="nums">{{a1}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="b1" class="box nums0">
+                                                    <div id="b1" class="box nums">
                                                         <p class="nums">{{b1}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="c1" class="box nums0">
+                                                    <div id="c1" class="box nums">
                                                         <p class="nums">{{c1}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="d1" class="box nums0">
+                                                    <div id="d1" class="box nums">
                                                         <p class="nums">{{d1}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="a2" class="box nums0">
+                                                    <div id="a2" class="box nums">
                                                         <p class="nums">{{a2}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="b2" class="box nums0">
+                                                    <div id="b2" class="box nums">
                                                         <p class="nums">{{b2}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="c2" class="box nums0">
+                                                    <div id="c2" class="box nums">
                                                         <p class="nums">{{c2}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="d2" class="box nums0">
+                                                    <div id="d2" class="box nums">
                                                         <p class="nums">{{d2}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="a3" class="box nums0">
+                                                    <div id="a3" class="box nums">
                                                         <p class="nums">{{a3}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="b3" class="box nums0">
+                                                    <div id="b3" class="box nums">
                                                         <p class="nums">{{b3}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="c3" class="box nums0">
+                                                    <div id="c3" class="box nums">
                                                         <p class="nums">{{c3}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="d3" class="box nums0">
+                                                    <div id="d3" class="box nums">
                                                         <p class="nums">{{d3}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="a4" class="box nums0">
+                                                    <div id="a4" class="box nums">
                                                         <p class="nums">{{a4}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="b4" class="box nums0">
+                                                    <div id="b4" class="box nums">
                                                         <p class="nums">{{b4}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="c4" class="box nums0">
+                                                    <div id="c4" class="box nums">
                                                         <p class="nums">{{c4}}</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-3">
-                                                    <div id="d4" class="box nums0">
+                                                    <div id="d4" class="box nums">
                                                         <p class="nums">{{d4}}</p>
                                                     </div>
 
@@ -276,6 +277,7 @@
 
                                     <p>code is " {{ code }} ".</p>
                                 </div>
+                            </div>
                                 <div id="tweet">
                                     <div  class="row">
                                         <div class="btn btn-2084 center"><a v-on:click=send_tweet>Share!</a></div>
@@ -289,7 +291,7 @@
 
             </div>
         </div>
-        </div>
+        
     </div>
     <span class="light">2022 Yuju-Fudan</span>
     <img src="img/backright.png" class="right" alt="">
@@ -297,14 +299,18 @@
     
 
     
+    
     <script>
         var tweet = new Vue({
             el: '#tweet',
-            data: {},
+            data: {
+                score: 0
+            },
             methods: {
                 send_tweet: function (event) {
                     var s, url;
-                    s = "投稿するテキスト";
+                    this.score = send_code.score
+                    s = "あなたの考えたアルゴリズムが"+this.score+"点を取りました！";
                     url = document.location.href;
                     
                     if (s != "") {
@@ -320,7 +326,7 @@
                 }
             }
         })
-    </script>
+    </script>>
     <script>
         var workspace = Blockly.inject('blocklyDiv',                                                  // ライブラリに読み込ませる
           {toolbox: document.getElementById('toolbox')});
@@ -332,23 +338,24 @@
             data: {
                 code: "",
                 result: 0,
-                a1: 0,
-                b1: 0,
-                c1: 0,
-                d1: 0,
-                a2: 0,
-                b2: 0,
-                c2: 0,
-                d2: 0,
-                a3: 0,
-                b3: 0,
-                c3: 0,
-                d3: 0,
-                a4: 0,
-                b4: 0,
-                c4: 0,
-                d4: 0,
-                step: 0
+                a1: '',
+                b1: '',
+                c1: '',
+                d1: '',
+                a2: '',
+                b2: '',
+                c2: '',
+                d2: '',
+                a3: '',
+                b3: '',
+                c3: '',
+                d3: '',
+                a4: '',
+                b4: '',
+                c4: '',
+                d4: '',
+                step: 0,
+                score: 0
             },
             methods: {
                 greet: function (event) {
@@ -378,21 +385,38 @@
                         if ( this.step < Object.keys(this.result[0]).length ) {
                             console.log("aaa")
                             this.a1 = result[0][this.step]["location"]["a1"]
+                            if (this.a1 == 0){this.a1=''}
                             this.b1 = result[0][this.step]["location"]["b1"]
+                            if (this.b1 == 0){this.b1=''}
                             this.c1 = result[0][this.step]["location"]["c1"]
+                            if (this.c1 == 0){this.c1=''}
                             this.d1 = result[0][this.step]["location"]["d1"]
+                            if (this.d1 == 0){this.d1=''}
                             this.a2 = result[0][this.step]["location"]["a2"]
+                            if (this.a2 == 0){this.a2=''}
                             this.b2 = result[0][this.step]["location"]["b2"]
+                            if (this.b2 == 0){this.b2=''}
                             this.c2 = result[0][this.step]["location"]["c2"]
+                            if (this.c2 == 0){this.c2=''}
                             this.d2 = result[0][this.step]["location"]["d2"]
+                            if (this.d2 == 0){this.d2=''}
                             this.a3 = result[0][this.step]["location"]["a3"]
+                            if (this.a3 == 0){this.a3=''}
                             this.b3 = result[0][this.step]["location"]["b3"]
+                            if (this.b3 == 0){this.b3=''}
                             this.c3 = result[0][this.step]["location"]["c3"]
+                            if (this.c3 == 0){this.c3=''}
                             this.d3 = result[0][this.step]["location"]["d3"]
+                            if (this.d3 == 0){this.d3=''}
                             this.a4 = result[0][this.step]["location"]["a4"]
+                            if (this.a4 == 0){this.a4=''}
                             this.b4 = result[0][this.step]["location"]["b4"]
+                            if (this.b4 == 0){this.b4=''}
                             this.c4 = result[0][this.step]["location"]["c4"]
+                            if (this.c4 == 0){this.c4=''}
                             this.d4 = result[0][this.step]["location"]["d4"]
+                            if (this.d4 == 0){this.d4=''}
+                            this.score = result[0][this.step]["score"]
                             var target = document.getElementById("a1");
                             target.className = "box nums" + this.a1;
                             var target = document.getElementById("b1");
