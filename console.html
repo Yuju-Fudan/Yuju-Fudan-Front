@@ -278,7 +278,9 @@
                                 </div>
                                 <div id="tweet">
                                     <div class="row">
-                                        <div class="btn btn-2084 center"><a v-on:click=send_tweet>Share!</a></div>
+                                        <a v-on:click=send_tweet>
+                                        <div class="btn btn-2084 center">Share!</div>
+                                            </a>
                                     </div>
                                 </div>
                             </div>
@@ -304,7 +306,7 @@
                 send_tweet: function (event) {
                     var s, url;
                     this.score = send_code.score
-                    s = "あなたの考えたアルゴリズムが" + this.score + "点を取りました！";
+                    s = "あなたの考えたアルゴリズムが" + this.score + "点を取りました！ #gazeat";
                     url = document.location.href;
 
                     if (s != "") {
