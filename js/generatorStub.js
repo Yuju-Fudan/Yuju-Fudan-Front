@@ -258,7 +258,7 @@ Blockly.Python['len_of_array'] = function (block) {
 Blockly.Python['value_of_array'] = function (block) {
   var value_array = Blockly.Python.valueToCode(block, 'array', Blockly.Python.ORDER_ATOMIC);
   var value_value = Blockly.Python.valueToCode(block, 'value', Blockly.Python.ORDER_ATOMIC);
-  var code = `b.get_value_of_array(${value_array}, ${value_vallue})`;
+  var code = `b.get_value_of_array(${value_array}, ${value_value})`;
   return [code, Blockly.Python.ORDER_NONE];
 };
 
