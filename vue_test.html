@@ -1,32 +1,34 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="index.css">
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        
-    </head>
-    <body>
-        
-        <div id="example-1">
-            <button v-on:click="counter += 1">Add 1</button>
-            <p>The button above has been clicked {{ counter }} times.</p>
-        </div>
 
-        <div id="tweet">
-            <div  class="row">
-                <div class="btn btn-2084 center"><button v-on:click=send_tweet>Share!</button></div>
-            </div>
+<head>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+
+    <div id="example-1">
+        <button v-on:click="counter += 1">Add 1</button>
+        <p>The button above has been clicked {{ counter }} times.</p>
+    </div>
+
+    <div id="tweet">
+        <div class="row">
+            <div class="btn btn-2084 center"><button v-on:click=send_tweet>Share!</button></div>
         </div>
-        
-        <script>
-            var example1 = new Vue({
-                el: '#example-1',
-                data: {
-                    counter: 0
-                }
-            })
-        </script>
-        <script>
-            var tweet = new Vue({
+    </div>
+
+    <script>
+        var example1 = new Vue({
+            el: '#example-1',
+            data: {
+                counter: 0
+            }
+        })
+    </script>
+    <script>
+        var tweet = new Vue({
             el: '#tweet',
             data: {
                 s: "",
@@ -37,7 +39,7 @@
                     var s, url;
                     s = "投稿するテキスト";
                     url = document.location.href;
-                    
+
                     if (s != "") {
                         if (s.length > 140) {
                             //文字数制限
@@ -45,12 +47,13 @@
                         } else {
                             //投稿画面を開く
                             url = "http://twitter.com/share?url=" + escape(url) + "&text=" + s;
-                            window.open(url,"_blank","width=600,height=300");
+                            window.open(url, "_blank", "width=600,height=300");
                         }
                     }
                 }
             }
         })
-        </script>
-    </body>
+    </script>
+</body>
+
 </html>
