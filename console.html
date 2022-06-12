@@ -11,19 +11,8 @@
     <meta property="og:image" content="https://yuju-fudan.github.io/Yuju-Fudan-Front/img/ogp.png" />
     <meta property="og:site_name" content="Gazeat" />
     <meta property="og:description" content="2048をプログラムに解かせよう" />
-
-
-
     <!-- ※Twitter共通設定 -->
     <meta name="twitter:card" content="summary_large_image" />
-
-
-
-
-
-
-
-
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -367,7 +356,9 @@
                     // };
                     params.append("code_block", this.code)
                     // axios.post('https://gazeat.herokuapp.com/api/post_game_status/', params, headers = header)
-                    axios.post('https://gazeat.herokuapp.com/api/post_game_status/', params)
+                    // axios.post('https://gazeat.herokuapp.com/api/post_game_status/', params)
+                    console.log("params: ", params)
+                    axios.post('http://localhost:2048/api/post_game_status/', params)
                         .then((response) => {
                             console.log(response);
                             this.result = response;
@@ -375,13 +366,8 @@
                         .catch(error => console.log(error))
                     setInterval(() => {
                         if (this.step < Object.keys(this.result.data).length) {
-                            // console.log("a1")
-                            // console.log(this.result.data)
-                            // console.log(this.result.data[this.step])
                             this.a1 = this.result.data[this.step]["location"]["a1"]
-                            // console.log("a2")
                             this.b1 = this.result.data[this.step]["location"]["b1"]
-                            // console.log("a3")
                             this.c1 = this.result.data[this.step]["location"]["c1"]
                             this.d1 = this.result.data[this.step]["location"]["d1"]
                             this.a2 = this.result.data[this.step]["location"]["a2"]
@@ -434,7 +420,7 @@
                         } else {
                             clearInterval();
                         }
-                    }, 500)
+                    }, 100)
                 }
             },
             mounted() {

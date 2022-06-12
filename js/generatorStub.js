@@ -209,7 +209,8 @@ Blockly.Python['not'] = function (block) {
 Blockly.Python['if'] = function (block) {
   var value_condition = Blockly.Python.valueToCode(block, 'condition', Blockly.Python.ORDER_ATOMIC);
   var statements_true_processing = Blockly.Python.statementToCode(block, 'true_processing');
-  var code = `if ${value_condition}:${statements_true_processing.slice(0, -1)};`;
+  // var code = `if ${value_condition}:${statements_true_processing.slice(0, -1)};`;
+  var code = `${statements_true_processing.slice(0, -1)} if ${value_condition} else None;`;
   // var code = `if ${value_condition}:;${statements_true_processing};`;
   return code;
 };
@@ -219,7 +220,6 @@ Blockly.Python['if_else'] = function (block) {
   var statements_true_processing = Blockly.Python.statementToCode(block, 'true_processing');
   var statements_false_processing = Blockly.Python.statementToCode(block, 'false_processing');
   var code = `${statements_true_processing.slice(0, -1)} if ${value_condition} else ${statements_false_processing}`;
-  // var code = `b.control_if_else(${value_condition}, ${statements_true_processing}, ${statements_false_processing})`;
   return code;
 };
 
@@ -322,4 +322,3 @@ Blockly.Python['define_array'] = function (block) {
   var code = `b.define_array(${value_array_name})`;
   return [code, Blockly.Python.ORDER_NONE];
 };
-
