@@ -355,10 +355,10 @@
                     //     // "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJ1c2VybmFtZSI6ImlkOC0xQGV4YW1wbGUuY29tIiwiZXhwIjoxNjQ3MDQ2OTUxLCJlbWFpbCI6ImlkOC0xQGV4YW1wbGUuY29tIn0.JgPInKsrVeEmxIgCZXRHJTCl1ihKFS3RDt6xJuJzQZY"
                     // };
                     params.append("code_block", this.code)
-                    // axios.post('https://gazeat.herokuapp.com/api/post_game_status/', params, headers = header)
-                    // axios.post('https://gazeat.herokuapp.com/api/post_game_status/', params)
                     console.log("params: ", params)
-                    axios.post('http://localhost:2048/api/post_game_status/', params)
+                    // axios.post('https://gazeat.herokuapp.com/api/post_game_status/', params, headers = header)
+                    axios.post('https://gazeat.herokuapp.com/api/post_game_status/', params)
+                        // axios.post('http://localhost:2048/api/post_game_status/', params)
                         .then((response) => {
                             console.log(response);
                             this.result = response;
